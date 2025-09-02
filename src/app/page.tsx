@@ -13,6 +13,9 @@ import {
   ShieldCheck,
   Zap,
   Download,
+  Headphones,
+  Search,
+  HelpCircle,
 } from 'lucide-react';
 import type { SVGProps } from 'react';
 import Link from 'next/link';
@@ -171,11 +174,11 @@ const HowItWorksSection = () => (
 
 const FeaturesSection = () => {
     const features = [
-        { icon: Languages, title: "Voice-First Onboarding", description: "Easy language selection with your voice." },
-        { icon: Zap, title: "Quick Access", description: "Get info fast with simple keywords." },
+        { icon: Headphones, title: "Voice-First Onboarding", description: "Easy language selection with your voice." },
+        { icon: Search, title: "Quick Access", description: "Get info fast with simple keywords." },
         { icon: Download, title: "Offline Playback", description: "Listen anywhere once downloaded." },
         { icon: MessageCircle, title: "Follow-Up Q&A", description: "Ask questions and get answers." },
-        { icon: ShieldCheck, title: "Clear Guidance", description: "Simple help if something goes wrong." },
+        { icon: HelpCircle, title: "Clear Guidance", description: "Simple help if something goes wrong." },
     ];
     return (
         <section id="features" className="container py-24 bg-secondary/50 rounded-2xl">
@@ -188,8 +191,8 @@ const FeaturesSection = () => {
                         <div className="bg-white rounded-full p-3 shadow">
                            <feature.icon className="h-6 w-6 text-accent" />
                         </div>
-                        <h3 className="font-semibold">{feature.title}</h3>
-                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                        <h3 className="font-semibold text-center">{feature.title}</h3>
+                        <p className="text-sm text-muted-foreground text-center">{feature.description}</p>
                     </div>
                 ))}
             </div>
@@ -271,3 +274,5 @@ export default function CarevoLandingPage() {
     </div>
   );
 }
+
+    
