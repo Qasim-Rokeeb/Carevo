@@ -29,6 +29,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
+  line-height: 1.4;
 }
 
 @layer base {
