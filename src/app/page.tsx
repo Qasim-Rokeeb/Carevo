@@ -14,6 +14,8 @@ import {
   Search,
   HelpCircle,
   ClipboardCheck,
+  Globe,
+  Star,
 } from 'lucide-react';
 import type { SVGProps } from 'react';
 import Link from 'next/link';
@@ -77,7 +79,7 @@ const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
 
 
 const Header = () => (
-  <header className="sticky top-0 z-50 w-full bg-background/95 shadow backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <header className="sticky top-0 z-50 w-full bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
       <Link href="/" className="flex items-center gap-2">
         <Logo className="h-8 w-8" />
@@ -155,6 +157,45 @@ const WhyCarevoSection = () => {
     </section>
   );
 }
+
+const AboutSection = () => (
+  <section id="about" className="container py-20">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="flex flex-col gap-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Our Mission: Health Equity for All
+          </span>
+        </h2>
+        <p className="text-lg text-muted-foreground">
+          Carevo was born from a simple yet powerful idea: everyone deserves access to clear, reliable health information, regardless of their location, language, or literacy level. We are committed to breaking down barriers and empowering communities with the knowledge they need to live healthier lives.
+        </p>
+        <div className="flex gap-4 mt-4">
+          <div className="flex items-center gap-2">
+            <Globe className="h-6 w-6 text-primary" />
+            <span className="font-semibold">Global Reach</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Star className="h-6 w-6 text-primary" />
+            <span className="font-semibold">Trusted Content</span>
+          </div>
+        </div>
+      </div>
+      <div className="relative">
+        <img
+          src="https://picsum.photos/seed/about/600/400"
+          alt="A healthcare worker smiling"
+          className="rounded-lg shadow-xl w-full"
+          data-ai-hint="healthcare worker smiling"
+        />
+        <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg max-w-xs">
+          <p className="text-sm font-semibold">"Empowering communities with accessible health knowledge is at the core of what we do."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 
 const HowItWorksSection = () => (
   <section id="how-it-works" className="py-20 bg-background">
@@ -291,6 +332,7 @@ export default function CarevoLandingPage() {
       <main>
         <HeroSection />
         <WhyCarevoSection />
+        <AboutSection />
         <HowItWorksSection />
         <FeaturesSection />
         <WhoItsForSection />
