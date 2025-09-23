@@ -181,7 +181,7 @@ const AboutSection = () => (
           </div>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <img
           src="https://picsum.photos/seed/about/600/400"
           alt="A healthcare worker smiling"
