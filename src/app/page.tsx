@@ -199,7 +199,7 @@ const FeaturesSection = () => {
         { icon: ClipboardCheck, title: "Verified Information", description: "Content from trusted health sources."}
     ];
     return (
-        <section id="features" className="container py-24 bg-secondary/30 rounded-2xl">
+        <section id="features" className="container py-24 bg-secondary/50 rounded-2xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
