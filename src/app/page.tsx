@@ -80,7 +80,7 @@ const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
 
 const Header = () => (
   <header className="sticky top-0 z-50 w-full bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
+    <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-6">
       <Link href="/" className="flex items-center gap-2">
         <Logo className="h-8 w-8" />
         <span className="text-2xl font-bold text-primary">Carevo</span>
@@ -95,7 +95,7 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-    <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative">
+    <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-4 md:px-6">
       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-primary/5 to-transparent -z-10" />
       <div className="flex flex-col gap-6 text-center lg:text-left">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -130,7 +130,7 @@ const WhyCarevoSection = () => {
     { icon: HeartPulse, title: 'Impactful', description: 'Practical tips on hygiene, childcare, and disease prevention.' },
   ];
   return (
-    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl">
+    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-6">
         <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -159,7 +159,7 @@ const WhyCarevoSection = () => {
 }
 
 const AboutSection = () => (
-  <section id="about" className="container py-20">
+  <section id="about" className="container py-20 px-4 md:px-6">
     <div className="grid md:grid-cols-2 gap-12 items-center">
       <div className="flex flex-col gap-4">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -199,7 +199,7 @@ const AboutSection = () => (
 
 const HowItWorksSection = () => (
   <section id="how-it-works" className="py-20 bg-background">
-    <div className="container">
+    <div className="container px-4 md:px-6">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -240,7 +240,7 @@ const FeaturesSection = () => {
         { icon: ClipboardCheck, title: "Verified Information", description: "Content from trusted health sources."}
     ];
     return (
-        <section id="features" className="container py-24 bg-secondary/50 rounded-2xl">
+        <section id="features" className="container py-24 bg-secondary/50 rounded-2xl px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -272,7 +272,7 @@ const WhoItsForSection = () => {
   ];
   return (
     <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl">
-      <div className="container">
+      <div className="container px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -303,7 +303,7 @@ const WhoItsForSection = () => {
 
 const FinalCTASection = () => (
     <section id="cta" className="bg-background py-24">
-        <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16">
+        <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16 px-4 md:px-6">
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full"></div>
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full"></div>
             <h2 className="text-3xl md:text-4xl font-bold">Start Learning With Just a Voice Note.</h2>
@@ -319,7 +319,7 @@ const FinalCTASection = () => (
 
 const Footer = () => (
     <footer className="border-t bg-secondary/50 animate-fade-in duration-500">
-        <div className="container py-6 text-center text-muted-foreground">
+        <div className="container py-6 text-center text-muted-foreground px-4 md:px-6">
             <p><span className="font-bold">&copy; {new Date().getFullYear()} Carevo.</span> All Rights Reserved.</p>
         </div>
     </footer>
