@@ -246,7 +246,7 @@ const FinalCTASection = () => (
 );
 
 const Footer = () => (
-    <footer className="border-t bg-secondary/50">
+    <footer className="border-t bg-secondary/50 animate-fade-in duration-500">
         <div className="container py-6 text-center text-muted-foreground">
             <p>&copy; {new Date().getFullYear()} Carevo. All Rights Reserved.</p>
         </div>
