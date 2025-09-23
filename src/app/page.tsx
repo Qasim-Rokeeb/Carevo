@@ -128,7 +128,7 @@ const WhyCarevoSection = () => {
     { icon: HeartPulse, title: 'Impactful', description: 'Practical tips on hygiene, childcare, and disease prevention.' },
   ];
   return (
-    <section id="why-carevo" className="container py-20 bg-background">
+    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl">
         <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -230,7 +230,7 @@ const WhoItsForSection = () => {
     { icon: HeartHandshake, title: 'Families & Caregivers', description: 'For trusted, simple health education.' },
   ];
   return (
-    <section id="who-its-for" className="py-24 bg-background">
+    <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
