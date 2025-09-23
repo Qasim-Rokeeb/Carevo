@@ -130,7 +130,11 @@ const WhyCarevoSection = () => {
   return (
     <section id="why-carevo" className="container py-20 bg-background">
         <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Closing the Health Information Gap</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Closing the Health Information Gap
+              </span>
+            </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
             {items.map(item => (
@@ -156,7 +160,11 @@ const HowItWorksSection = () => (
   <section id="how-it-works" className="py-20 bg-background">
     <div className="container">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground">Get Started in Seconds</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Get Started in Seconds
+          </span>
+        </h2>
       </div>
       <div className="grid md:grid-cols-3 gap-12 text-center">
         {[
@@ -193,7 +201,11 @@ const FeaturesSection = () => {
     return (
         <section id="features" className="container py-24 bg-secondary/30 rounded-2xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Powerful Features, Simple Interface</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Powerful Features, Simple Interface
+                </span>
+              </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {features.map((feature) => (
@@ -221,7 +233,11 @@ const WhoItsForSection = () => {
     <section id="who-its-for" className="py-24 bg-background">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Designed For Everyone</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Designed For Everyone
+            </span>
+          </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {audiences.map(audience => (
