@@ -21,9 +21,22 @@ import Link from 'next/link';
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
 const Logo = (props: SVGProps<SVGSVGElement>) => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="hsl(var(--primary))"/>
-    <path d="M12 6C9.24 6 7 8.24 7 11C7 12.76 7.85 14.3 9.09 15.29L9.5 15.63V18H10.5V15.2L10.21 15C9.23 14.26 8.5 13.03 8.5 11.63C8.5 9.08 10.08 7.5 12 7.5C13.92 7.5 15.5 9.08 15.5 11.63C15.5 13.03 14.77 14.26 13.79 15L13.5 15.2V18H14.5V15.63L14.91 15.29C16.15 14.3 17 12.76 17 11C17 8.24 14.76 6 12 6Z" fill="hsl(var(--primary))"/>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+      fill="hsl(var(--primary))"
+    />
+    <path
+      d="M16 8.5h-3.5V5h-1v3.5H8v1h3.5V13h1V9.5H16v-1z"
+      fill="hsl(var(--primary-foreground))"
+    />
   </svg>
 );
 
