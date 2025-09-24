@@ -42,6 +42,17 @@ const Logo = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M16.75 13.96c.25.58.93 1.13 1.5 1.48 1.13.68 2 1.25 2.25 1.36.25.13.38.25.5.5.13.25.13.5 0 .75-.13.25-.5.5-.94.63-1.07.31-2.26.25-3.38-.13-.75-.25-1.5-.63-2.25-1.13-1.25-.88-2.31-1.94-3.19-3.19-.81-1.13-1.31-2.31-1.5-3.5-.13-.75 0-1.5.25-2.13.25-.75.69-1.31 1.07-1.5.25-.13.5-.13.75-.13.25 0 .5.13.63.25.13.13.25.38.38.63.13.25.25.5.25.75 0 .25.13.5.13.63s-.13.38-.25.5a.69.69 0 0 1-.5.38c-.25.13-.5.13-.63.13-.13 0-.25.13-.31.25-.25.5-.13 1.13.25 1.88.5 1.07 1.19 1.94 2.07 2.63.31.25.69.44 1.13.63.25.13.5.13.75.13h.13c.25 0 .5-.13.69-.25.25-.13.44-.31.63-.5.25-.25.5-.5.75-.75.25-.13.5-.13.75-.13h.13c.25 0 .5 0 .63.13a.9.9 0 0 1 .5.5c.13.25.13.5.13.75 0 .25-.13.5-.13.75M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" />
+    </svg>
+  );
+
 
 const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -87,6 +98,7 @@ const Header = () => (
       </Link>
       <Button asChild>
         <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+          <WhatsAppIcon className="h-5 w-5" />
           Start on WhatsApp
         </a>
       </Button>
@@ -109,6 +121,7 @@ const HeroSection = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <Button asChild size="lg">
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+              <WhatsAppIcon className="h-5 w-5" />
               Start on WhatsApp
             </a>
           </Button>
@@ -309,7 +322,10 @@ const FinalCTASection = () => (
             <h2 className="text-3xl md:text-4xl font-bold">Start Learning With Just a Voice Note.</h2>
             <div className="mt-8">
                 <Button asChild size="lg" variant="secondary" className="bg-background text-primary hover:bg-background/90">
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">Try Carevo on WhatsApp</a>
+                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                        <WhatsAppIcon className="h-5 w-5" />
+                        Try Carevo on WhatsApp
+                    </a>
                 </Button>
             </div>
             <p className="mt-4 text-primary-foreground/80">Free. Simple. Life-saving.</p>
