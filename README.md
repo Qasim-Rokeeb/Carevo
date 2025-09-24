@@ -1,5 +1,10 @@
-# Firebase Studio
 
-This is a NextJS starter in Firebase Studio.
+# Carevo - WhatsApp Chatbot
 
-To get started, take a look at src/app/page.tsx.
+Carevo is a WhatsApp chatbot designed to provide assistance and information. It is built using NextJS and integrated with Firebase for backend services.
+
+## Features
+
+*   Engage in conversations via WhatsApp.
+*   Provide information and answer questions.
+*   Potential for integration with various APIs for enhanced functionality (e.g., TTS, STT).
