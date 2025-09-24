@@ -173,8 +173,17 @@ const WhyCarevoSection = () => {
 
 const AboutSection = () => (
   <section id="about" className="container py-20 px-4 md:px-6">
-    <div className="grid md:grid-cols-2 gap-12 items-center">
-      <div className="flex flex-col gap-4">
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative rounded-lg overflow-hidden shadow-xl">
+        <img
+          src="https://picsum.photos/seed/about/600/400"
+          alt="A healthcare worker smiling"
+          className="w-full h-full object-cover"
+          data-ai-hint="healthcare worker smiling"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+      </div>
+      <div className="flex flex-col gap-6">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Our Mission: Health Equity for All
@@ -183,26 +192,24 @@ const AboutSection = () => (
         <p className="text-lg text-muted-foreground">
           Carevo was born from a simple yet powerful idea: everyone deserves access to clear, reliable health information, regardless of their location, language, or literacy level.
         </p>
-        <div className="flex gap-4 mt-4">
-          <div className="flex items-center gap-2">
-            <Globe className="h-6 w-6 text-primary" />
-            <span className="font-semibold">Global Reach</span>
+        <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground">
+          "Empowering communities with accessible health knowledge is at the core of what we do."
+        </blockquote>
+        <div className="flex gap-6 mt-2">
+          <div className="flex items-center gap-3">
+            <Globe className="h-7 w-7 text-primary" />
+            <div>
+              <p className="font-semibold">Global Reach</p>
+              <p className="text-sm text-muted-foreground">Accessible worldwide</p>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <Star className="h-6 w-6 text-primary" />
-            <span className="font-semibold">Trusted Content</span>
+          <div className="flex items-center gap-3">
+            <Star className="h-7 w-7 text-primary" />
+            <div>
+              <p className="font-semibold">Trusted Content</p>
+              <p className="text-sm text-muted-foreground">Expert-verified info</p>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="relative overflow-hidden">
-        <img
-          src="https://picsum.photos/seed/about/600/400"
-          alt="A healthcare worker smiling"
-          className="rounded-lg shadow-xl w-full"
-          data-ai-hint="healthcare worker smiling"
-        />
-        <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg max-w-xs">
-          <p className="text-sm font-semibold">"Empowering communities with accessible health knowledge is at the core of what we do."</p>
         </div>
       </div>
     </div>
