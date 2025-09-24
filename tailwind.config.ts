@@ -94,11 +94,16 @@ export default {
           from: { opacity: '0' },
           to: { opacity: '1' },
         },
+        'pulse-slow': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.1' },
+          '50%': { transform: 'scale(1.05)', opacity: '0.2' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in': 'fade-in 1s ease-in-out',
+        'pulse-slow': 'pulse-slow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },

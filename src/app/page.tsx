@@ -304,8 +304,8 @@ const WhoItsForSection = () => {
 const FinalCTASection = () => (
     <section id="cta" className="bg-background py-24">
         <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16 px-4 md:px-6">
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full"></div>
-            <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full"></div>
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full animate-pulse-slow"></div>
+            <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full animate-pulse-slow animation-delay-3000"></div>
             <h2 className="text-3xl md:text-4xl font-bold">Start Learning With Just a Voice Note.</h2>
             <div className="mt-8">
                 <Button asChild size="lg" variant="secondary" className="bg-background text-primary hover:bg-background/90">
