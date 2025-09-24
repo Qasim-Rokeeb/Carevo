@@ -168,7 +168,7 @@ const AboutSection = () => (
           </span>
         </h2>
         <p className="text-lg text-muted-foreground">
-          Carevo was born from a simple yet powerful idea: everyone deserves access to clear, reliable health information, regardless of their location, language, or literacy level. We are committed to breaking down barriers and empowering communities with the knowledge they need to live healthier lives.
+          Carevo was born from a simple yet powerful idea: everyone deserves access to clear, reliable health information, regardless of their location, language, or literacy level.
         </p>
         <div className="flex gap-4 mt-4">
           <div className="flex items-center gap-2">
