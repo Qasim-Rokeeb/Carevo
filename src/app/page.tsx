@@ -9,16 +9,13 @@ import {
   Users,
   Building,
   HeartHandshake,
-  Download,
-  Headphones,
-  Search,
-  HelpCircle,
-  ClipboardCheck,
   Globe,
   Star,
 } from 'lucide-react';
 import type { SVGProps } from 'react';
 import Link from 'next/link';
+import { HeroSection } from '@/components/hero-section';
+import { FeaturesSection } from '@/components/features-section';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -79,45 +76,9 @@ const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
     </svg>
   );
 
-
-const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <defs>
-        <linearGradient id="grad-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 0.7 }} />
-          <stop offset="100%" style={{ stopColor: 'hsl(var(--accent))', stopOpacity: 0.5 }} />
-        </linearGradient>
-        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-          <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-      </filter>
-      </defs>
-      
-      <path d="M0,350 Q250,320 500,350 L500,350 L0,350 Z" fill="hsl(var(--primary) / 0.05)" />
-      
-      <g transform="translate(20, 20)">
-        <rect x="200" y="75" width="100" height="200" rx="15" fill="hsl(var(--card))" stroke="hsl(var(--border))" strokeWidth="1.5"/>
-        <rect x="210" y="85" width="80" height="150" rx="5" fill="hsl(var(--background))"/>
-        <line x1="235" y1="260" x2="265" y2="260" stroke="hsl(var(--border))" strokeWidth="2" strokeLinecap="round" />
-        
-        <rect x="215" y="95" width="60" height="20" rx="5" fill="hsl(var(--secondary))" />
-        <rect x="235" y="125" width="50" height="30" rx="5" fill="hsl(var(--primary))" />
-        
-        <g transform="translate(245, 132.5)" fill="hsl(var(--primary-foreground))" filter="url(#glow)">
-          <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" transform="scale(0.5)" />
-          <path d="M5 10a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v1zm10 0a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1v1z" transform="scale(0.5) translate(0, 10)" />
-        </g>
-      </g>
-    </svg>
-  );
-
-
 const Header = () => (
   <header className="sticky top-0 z-50 w-full animate-fade-in bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
+    <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-8 md:px-16">
       <Link href="/" className="flex items-center gap-2">
         <Logo className="h-8 w-8" />
         <span className="text-2xl font-bold text-primary">Carevo</span>
@@ -132,36 +93,6 @@ const Header = () => (
   </header>
 );
 
-const HeroSection = () => (
-    <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-4 md:px-8">
-      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-primary/5 to-transparent -z-10" />
-      <div className="flex flex-col gap-6 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-up">
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Health Guidance You Can Hear, Anytime.
-          </span>
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          Carevo delivers life-saving health education through WhatsApp voice notes in your local language.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-              <WhatsAppIcon className="h-5 w-5" />
-              Start on WhatsApp
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="border-primary/50 text-primary hover:bg-primary/5 hover:text-primary">
-            <a href="#how-it-works">How It Works</a>
-          </Button>
-        </div>
-      </div>
-      <div className="flex justify-center items-center">
-         <HeroIllustration className="w-full max-w-md lg:max-w-lg h-auto" data-ai-hint="phone whatsapp voice" />
-      </div>
-    </section>
-  );
-
 const WhyCarevoSection = () => {
   const items = [
     { icon: Smartphone, title: 'Accessible', description: 'No app needed, works on any phone with WhatsApp.' },
@@ -169,7 +100,7 @@ const WhyCarevoSection = () => {
     { icon: HeartPulse, title: 'Impactful', description: 'Practical tips on hygiene, childcare, and disease prevention.' },
   ];
   return (
-    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-8">
+    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-8 md:px-16">
         <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -198,7 +129,7 @@ const WhyCarevoSection = () => {
 }
 
 const AboutSection = () => (
-  <section id="about" className="container py-20 px-4 md:px-8 overflow-hidden">
+  <section id="about" className="container py-20 px-8 md:px-16 overflow-hidden">
     <div className="grid md:grid-cols-2 gap-16 items-center">
       <div className="relative rounded-lg overflow-hidden shadow-xl">
         <img
@@ -244,7 +175,7 @@ const AboutSection = () => (
 
 
 const HowItWorksSection = () => (
-  <section id="how-it-works" className="py-20 bg-background px-4 md:px-8">
+  <section id="how-it-works" className="py-20 bg-background px-8 md:px-16">
     <div className="container">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -275,41 +206,6 @@ const HowItWorksSection = () => (
   </section>
 );
 
-
-const FeaturesSection = () => {
-    const features = [
-        { icon: Headphones, title: "Voice-First Onboarding", description: "Easy language selection with your voice." },
-        { icon: Search, title: "Quick Access", description: "Get info fast with simple keywords." },
-        { icon: Download, title: "Offline Playback", description: "Listen anywhere once downloaded." },
-        { icon: MessageCircle, title: "Follow-Up Q&A", description: "Ask questions and get answers." },
-        { icon: HelpCircle, title: "Clear Guidance", description: "Simple help if something goes wrong." },
-        { icon: ClipboardCheck, title: "Verified Information", description: "Content from trusted health sources."}
-    ];
-    return (
-        <section id="features" className="container py-24 bg-secondary/50 rounded-2xl px-4 md:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Powerful Features, Simple Interface
-                </span>
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {features.map((feature) => (
-                    <div key={feature.title} className="flex flex-col items-center text-center gap-3">
-                        <div className="bg-background rounded-full p-3 shadow">
-                           <feature.icon className="h-6 w-6 text-accent" />
-                        </div>
-                        <h3 className="font-semibold text-center">{feature.title}</h3>
-                        <p className="text-sm text-muted-foreground text-center">{feature.description}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-};
-
-
 const WhoItsForSection = () => {
   const audiences = [
     { icon: Users, title: 'Communities', description: 'With limited literacy or internet access.' },
@@ -317,7 +213,7 @@ const WhoItsForSection = () => {
     { icon: HeartHandshake, title: 'Families & Caregivers', description: 'For trusted, simple health education.' },
   ];
   return (
-    <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl px-4 md:px-8">
+    <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl px-8 md:px-16">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -348,7 +244,7 @@ const WhoItsForSection = () => {
 
 
 const FinalCTASection = () => (
-    <section id="cta" className="bg-background py-24 px-4 md:px-8">
+    <section id="cta" className="bg-background py-24 px-8 md:px-16">
         <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16">
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full animate-pulse-slow"></div>
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full animate-pulse-slow animation-delay-3000"></div>
@@ -368,7 +264,7 @@ const FinalCTASection = () => (
 
 const Footer = () => (
     <footer className="border-t bg-secondary/50 animate-fade-in duration-500">
-        <div className="container py-6 text-center text-muted-foreground px-4 md:px-8">
+        <div className="container py-6 text-center text-muted-foreground px-8 md:px-16">
             <p><span className="font-bold">&copy; {new Date().getFullYear()} Carevo.</span> All Rights Reserved.</p>
         </div>
     </footer>
