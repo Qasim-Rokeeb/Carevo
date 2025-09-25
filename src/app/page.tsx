@@ -91,7 +91,7 @@ const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
 
 const Header = () => (
   <header className="sticky top-0 z-50 w-full animate-fade-in bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-6">
+    <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
       <Link href="/" className="flex items-center gap-2">
         <Logo className="h-8 w-8" />
         <span className="text-2xl font-bold text-primary">Carevo</span>
@@ -107,10 +107,10 @@ const Header = () => (
 );
 
 const HeroSection = () => (
-    <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-4 md:px-6">
+    <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-4 md:px-8">
       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-primary/5 to-transparent -z-10" />
       <div className="flex flex-col gap-6 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-up">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Health Guidance You Can Hear, Anytime.
           </span>
