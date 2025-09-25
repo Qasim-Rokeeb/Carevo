@@ -90,7 +90,7 @@ const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
 
 
 const Header = () => (
-  <header className="sticky top-0 z-50 w-full bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60 animate-fade-in duration-500">
+  <header className="sticky top-0 z-50 w-full animate-fade-in bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-6">
       <Link href="/" className="flex items-center gap-2">
         <Logo className="h-8 w-8" />
@@ -109,16 +109,16 @@ const Header = () => (
 const HeroSection = () => (
     <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-4 md:px-6">
       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-primary/5 to-transparent -z-10" />
-      <div className="flex flex-col gap-6 text-center lg:text-left">
+      <div className="flex flex-col gap-6 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Health Guidance You Can Hear, Anytime.
           </span>
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
           Carevo delivers life-saving health education through WhatsApp voice notes in your local language.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg">
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon className="h-5 w-5" />
@@ -143,7 +143,7 @@ const WhyCarevoSection = () => {
     { icon: HeartPulse, title: 'Impactful', description: 'Practical tips on hygiene, childcare, and disease prevention.' },
   ];
   return (
-    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-6">
+    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-8">
         <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -172,7 +172,7 @@ const WhyCarevoSection = () => {
 }
 
 const AboutSection = () => (
-  <section id="about" className="container py-20 px-4 md:px-6">
+  <section id="about" className="container py-20 px-4 md:px-8 overflow-hidden">
     <div className="grid md:grid-cols-2 gap-16 items-center">
       <div className="relative rounded-lg overflow-hidden shadow-xl">
         <img
@@ -190,7 +190,7 @@ const AboutSection = () => (
           </span>
         </h2>
         <p className="text-lg text-muted-foreground">
-          Carevo was born from a simple yet powerful idea: everyone deserves access to clear, reliable health information, regardless of their location, language, or literacy level.
+          Carevo was born from a simple yet powerful idea: everyone deserves access to clear, reliable health information.
         </p>
         <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground">
           "Empowering communities with accessible health knowledge is at the core of what we do."
@@ -218,8 +218,8 @@ const AboutSection = () => (
 
 
 const HowItWorksSection = () => (
-  <section id="how-it-works" className="py-20 bg-background">
-    <div className="container px-4 md:px-6">
+  <section id="how-it-works" className="py-20 bg-background px-4 md:px-8">
+    <div className="container">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -260,7 +260,7 @@ const FeaturesSection = () => {
         { icon: ClipboardCheck, title: "Verified Information", description: "Content from trusted health sources."}
     ];
     return (
-        <section id="features" className="container py-24 bg-secondary/50 rounded-2xl px-4 md:px-6">
+        <section id="features" className="container py-24 bg-secondary/50 rounded-2xl px-4 md:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -291,8 +291,8 @@ const WhoItsForSection = () => {
     { icon: HeartHandshake, title: 'Families & Caregivers', description: 'For trusted, simple health education.' },
   ];
   return (
-    <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl">
-      <div className="container px-4 md:px-6">
+    <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl px-4 md:px-8">
+      <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -322,8 +322,8 @@ const WhoItsForSection = () => {
 
 
 const FinalCTASection = () => (
-    <section id="cta" className="bg-background py-24">
-        <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16 px-4 md:px-6">
+    <section id="cta" className="bg-background py-24 px-4 md:px-8">
+        <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16">
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full animate-pulse-slow"></div>
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full animate-pulse-slow animation-delay-3000"></div>
             <h2 className="text-3xl md:text-4xl font-bold">Start Learning With Just a Voice Note.</h2>
@@ -342,7 +342,7 @@ const FinalCTASection = () => (
 
 const Footer = () => (
     <footer className="border-t bg-secondary/50 animate-fade-in duration-500">
-        <div className="container py-6 text-center text-muted-foreground px-4 md:px-6">
+        <div className="container py-6 text-center text-muted-foreground px-4 md:px-8">
             <p><span className="font-bold">&copy; {new Date().getFullYear()} Carevo.</span> All Rights Reserved.</p>
         </div>
     </footer>
