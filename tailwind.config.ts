@@ -108,6 +108,10 @@ export default {
           '0%, 100%': { transform: 'scale(1)', opacity: '0.1' },
           '50%': { transform: 'scale(1.05)', opacity: '0.2' },
         },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -115,6 +119,7 @@ export default {
         'fade-in': 'fade-in 1s ease-in-out',
         'fade-up': 'fade-up 1s ease-in-out',
         'pulse-slow': 'pulse-slow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 3s ease-in-out infinite',
       },
     },
   },
