@@ -117,6 +117,11 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-5%)' },
         },
+        'pop-in': {
+            '0%': { transform: 'scale(0.9)', opacity: '0' },
+            '80%': { transform: 'scale(1.05)', opacity: '1' },
+            '100%': { transform: 'scale(1)', opacity: '1' },
+        },
         blink: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0' },
@@ -145,6 +150,7 @@ export default {
         'fade-up': 'fade-up 1s ease-in-out',
         'pulse-slow': 'pulse-slow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'float': 'float 3s ease-in-out infinite',
+        'pop-in': 'pop-in .6s ease-out forwards, float 3s ease-in-out 1s infinite',
         'blink': 'blink 1s step-end infinite',
         bounce: 'bounce 1s infinite',
         ripple: 'ripple 600ms linear',
