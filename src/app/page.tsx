@@ -16,6 +16,7 @@ import { HeroSection } from '@/components/hero-section';
 import { FeaturesSection } from '@/components/features-section';
 import Image from 'next/image';
 import { TypingCarousel } from '@/components/typing-carousel';
+import { ModeToggle } from '@/components/mode-toggle';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -83,12 +84,15 @@ const Header = () => (
         <Logo className="h-8 w-8" />
         <span className="text-2xl font-bold text-primary">Carevo</span>
       </Link>
-      <Button asChild>
-        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-          <WhatsAppIcon className="h-5 w-5" />
-          Start on WhatsApp
-        </a>
-      </Button>
+      <div className='flex items-center gap-2'>
+        <Button asChild>
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+            <WhatsAppIcon className="h-5 w-5" />
+            Start on WhatsApp
+          </a>
+        </Button>
+        <ModeToggle />
+      </div>
     </div>
   </header>
 );
