@@ -195,7 +195,7 @@ const AboutSection = () => (
           alt="A healthcare worker smiling"
           width={600}
           height={400}
-          className="w-full h-full object-cover"
+          className="w-full h-auto object-cover"
           data-ai-hint="healthcare worker smiling"
           loading="lazy"
         />
