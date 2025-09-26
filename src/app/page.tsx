@@ -10,35 +10,13 @@ import {
   Star,
 } from 'lucide-react';
 import type { SVGProps } from 'react';
-import Link from 'next/link';
 import { HeroSection } from '@/components/hero-section';
 import { FeaturesSection } from '@/components/features-section';
 import Image from 'next/image';
 import { TypingCarousel } from '@/components/typing-carousel';
-import { ModeToggle } from '@/components/mode-toggle';
-import { LanguageSwitcher } from '@/components/language-switcher';
+import { Header } from '@/components/header';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
-
-const Logo = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <path
-      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-      fill="hsl(var(--primary))"
-    />
-    <path
-      d="M16 8.5h-3.5V5h-1v3.5H8v1h3.5V13h1V9.5H16v-1z"
-      fill="hsl(var(--primary-foreground))"
-    />
-  </svg>
-);
 
 const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg 
@@ -76,32 +54,6 @@ const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
         </g>
     </svg>
   );
-
-const Header = () => (
-  <header className="sticky top-0 z-50 w-full animate-fade-in bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-24">
-      <Link href="/" className="flex items-center gap-2">
-        <Logo className="h-8 w-8" />
-        <span className="text-2xl font-bold text-primary">Carevo</span>
-      </Link>
-      <div className='flex items-center gap-2'>
-        <Button asChild>
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Start a conversation with Carevo on WhatsApp"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-            Start on WhatsApp
-          </a>
-        </Button>
-        <LanguageSwitcher />
-        <ModeToggle />
-      </div>
-    </div>
-  </header>
-);
 
 const SmartphoneIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
