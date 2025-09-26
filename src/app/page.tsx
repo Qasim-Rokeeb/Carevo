@@ -1,11 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
-  HeartPulse,
   Languages,
   MessageCircle,
   PlayCircle,
-  Smartphone,
   Users,
   Building,
   HeartHandshake,
@@ -94,11 +92,70 @@ const Header = () => (
   </header>
 );
 
+const SmartphoneIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+  </svg>
+);
+
+const InclusiveIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
+    <path d="M12 6v6l4 2" />
+    <path d="M12 12H8" />
+  </svg>
+);
+
+const ImpactfulIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+    <path d="M22 12h-4" />
+    <path d="M2 12h4" />
+    <path d="M12 2v4" />
+    <path d="M12 22v-4" />
+  </svg>
+);
+
+
 const WhyCarevoSection = () => {
   const items = [
-    { icon: Smartphone, title: 'Accessible', description: 'No app needed, works on any phone with WhatsApp.' },
-    { icon: Languages, title: 'Inclusive', description: 'Audio in local languages, no reading required.' },
-    { icon: HeartPulse, title: 'Impactful', description: 'Practical tips on hygiene, childcare, and disease prevention.' },
+    { icon: SmartphoneIcon, title: 'Accessible', description: 'No app needed, works on any phone with WhatsApp.' },
+    { icon: InclusiveIcon, title: 'Inclusive', description: 'Audio in local languages, no reading required.' },
+    { icon: ImpactfulIcon, title: 'Impactful', description: 'Practical tips on hygiene, childcare, and disease prevention.' },
   ];
   return (
     <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-24">
