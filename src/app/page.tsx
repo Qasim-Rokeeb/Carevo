@@ -22,6 +22,7 @@ import {WhatsAppIcon} from '@/components/ui/whatsapp-icon';
 import {useToast} from '@/hooks/use-toast';
 import {useIsMobile} from '@/hooks/use-mobile';
 import {useIsClient} from '@/hooks/use-is-client';
+import {SwooshDivider} from '@/components/swoosh-divider';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -105,8 +106,9 @@ const WhyCarevoSection = () => {
   return (
     <section
       id="why-carevo"
-      className="container scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-20 md:px-24"
+      className="container relative scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-20 md:px-24"
     >
+      <SwooshDivider top className="text-background" />
       <div className="mb-12 text-center">
         <h2 className="text-fluid-h2 font-bold text-foreground">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -135,6 +137,7 @@ const WhyCarevoSection = () => {
         ))}
       </div>
       <div className="my-20 w-full border-b" />
+      <SwooshDivider bottom className="text-background" />
     </section>
   );
 };
@@ -204,7 +207,7 @@ const AboutSection = () => (
 const HowItWorksSection = () => (
   <section
     id="how-it-works"
-    className="scroll-mt-24 bg-background px-4 py-20 md:px-24"
+    className="relative scroll-mt-24 bg-background px-4 py-20 md:px-24"
   >
     <div className="container">
       <div className="mb-16 text-center">
@@ -273,8 +276,9 @@ const WhoItsForSection = () => {
   return (
     <section
       id="who-its-for"
-      className="scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-24 md:px-24"
+      className="relative scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-24 md:px-24"
     >
+      <SwooshDivider top className="text-background" />
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="text-fluid-h2 font-bold text-foreground">
@@ -304,6 +308,7 @@ const WhoItsForSection = () => {
           ))}
         </div>
       </div>
+      <SwooshDivider bottom className="text-background" />
     </section>
   );
 };
