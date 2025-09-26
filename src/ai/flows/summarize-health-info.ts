@@ -15,14 +15,20 @@ const SummarizeHealthInfoInputSchema = z.object({
   question: z.string().describe('The user question about health information.'),
   healthInfo: z.string().describe('Detailed health information to summarize.'),
 });
-export type SummarizeHealthInfoInput = z.infer<typeof SummarizeHealthInfoInputSchema>;
+export type SummarizeHealthInfoInput = z.infer<
+  typeof SummarizeHealthInfoInputSchema
+>;
 
 const SummarizeHealthInfoOutputSchema = z.object({
   summary: z.string().describe('A summarized answer to the user question.'),
 });
-export type SummarizeHealthInfoOutput = z.infer<typeof SummarizeHealthInfoOutputSchema>;
+export type SummarizeHealthInfoOutput = z.infer<
+  typeof SummarizeHealthInfoOutputSchema
+>;
 
-export async function summarizeHealthInfo(input: SummarizeHealthInfoInput): Promise<SummarizeHealthInfoOutput> {
+export async function summarizeHealthInfo(
+  input: SummarizeHealthInfoInput
+): Promise<SummarizeHealthInfoOutput> {
   return summarizeHealthInfoFlow(input);
 }
 

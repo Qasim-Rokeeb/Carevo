@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { Cookie } from 'lucide-react';
+import {useState, useEffect} from 'react';
+import {Button} from '@/components/ui/button';
+import {cn} from '@/lib/utils';
+import {Cookie} from 'lucide-react';
 
 export const CookieConsentBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -46,13 +46,20 @@ export const CookieConsentBanner = () => {
           <Cookie className="h-8 w-8 text-primary" />
         </div>
         <div className="flex-grow text-sm text-muted-foreground text-center sm:text-left">
-          <h3 className="font-semibold text-foreground mb-1">Cookie Preferences</h3>
+          <h3 className="font-semibold text-foreground mb-1">
+            Cookie Preferences
+          </h3>
           <p>
-            We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept," you consent to our use of cookies.
+            We use cookies to enhance your browsing experience and analyze our
+            traffic. By clicking "Accept," you consent to our use of cookies.
           </p>
         </div>
         <div className="flex-shrink-0 flex gap-3">
-          <Button variant="outline" size="sm" onClick={() => handleConsent(false)}>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => handleConsent(false)}
+          >
             Decline
           </Button>
           <Button size="sm" onClick={() => handleConsent(true)}>

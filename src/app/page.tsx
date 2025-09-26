@@ -1,8 +1,7 @@
-
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {Button} from '@/components/ui/button';
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {
   MessageCircle,
   PlayCircle,
@@ -13,14 +12,14 @@ import {
   Star,
   Phone,
 } from 'lucide-react';
-import type { SVGProps } from 'react';
-import { HeroSection } from '@/components/hero-section';
-import { FeaturesSection } from '@/components/features-section';
+import type {SVGProps} from 'react';
+import {HeroSection} from '@/components/hero-section';
+import {FeaturesSection} from '@/components/features-section';
 import Image from 'next/image';
-import { TypingCarousel } from '@/components/typing-carousel';
-import { Header } from '@/components/header';
-import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
-import { useToast } from '@/hooks/use-toast';
+import {TypingCarousel} from '@/components/typing-carousel';
+import {Header} from '@/components/header';
+import {WhatsAppIcon} from '@/components/ui/whatsapp-icon';
+import {useToast} from '@/hooks/use-toast';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -82,41 +81,61 @@ const ImpactfulIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-
 const WhyCarevoSection = () => {
   const items = [
-    { icon: SmartphoneIcon, title: 'Accessible', description: 'No app needed, works on any phone with WhatsApp.' },
-    { icon: InclusiveIcon, title: 'Inclusive', description: 'Audio in local languages, no reading required.' },
-    { icon: ImpactfulIcon, title: 'Impactful', description: 'Practical tips on hygiene, childcare, and disease prevention.' },
+    {
+      icon: SmartphoneIcon,
+      title: 'Accessible',
+      description: 'No app needed, works on any phone with WhatsApp.',
+    },
+    {
+      icon: InclusiveIcon,
+      title: 'Inclusive',
+      description: 'Audio in local languages, no reading required.',
+    },
+    {
+      icon: ImpactfulIcon,
+      title: 'Impactful',
+      description:
+        'Practical tips on hygiene, childcare, and disease prevention.',
+    },
   ];
   return (
-    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-24">
-        <div className="text-center mb-12">
-            <h2 className="text-fluid-h2 font-bold text-foreground">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Closing the Health Information Gap
-              </span>
-            </h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
-            {items.map(item => (
-                <Card key={item.title} className="text-center shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-transparent hover:border-primary rounded-xl hover:-translate-y-1">
-                    <CardHeader>
-                        <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
-                            <item.icon className="h-7 w-7 text-primary" />
-                        </div>
-                        <CardTitle className="text-xl">{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-fluid-p text-muted-foreground">{item.description}</p>
-                    </CardContent>
-                </Card>
-            ))}
-        </div>
-        <div className="w-full border-b my-20" />
+    <section
+      id="why-carevo"
+      className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-24"
+    >
+      <div className="text-center mb-12">
+        <h2 className="text-fluid-h2 font-bold text-foreground">
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Closing the Health Information Gap
+          </span>
+        </h2>
+      </div>
+      <div className="grid md:grid-cols-3 gap-8">
+        {items.map(item => (
+          <Card
+            key={item.title}
+            className="text-center shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-transparent hover:border-primary rounded-xl hover:-translate-y-1"
+          >
+            <CardHeader>
+              <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
+                <item.icon className="h-7 w-7 text-primary" />
+              </div>
+              <CardTitle className="text-xl">{item.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-fluid-p text-muted-foreground">
+                {item.description}
+              </p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      <div className="w-full border-b my-20" />
     </section>
   );
-}
+};
 
 const AboutSection = () => (
   <section id="about" className="container py-20 px-4 md:px-24 overflow-hidden">
@@ -136,29 +155,39 @@ const AboutSection = () => (
       <div className="flex flex-col gap-6">
         <div className="text-fluid-h2 font-bold text-foreground">
           <TypingCarousel
-            phrases={['Our Mission: Health Equity for All', 'Our Goal: Accessible Information', 'Our Vision: Empowered Communities']}
+            phrases={[
+              'Our Mission: Health Equity for All',
+              'Our Goal: Accessible Information',
+              'Our Vision: Empowered Communities',
+            ]}
             className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
           />
         </div>
         <p className="text-fluid-p text-muted-foreground">
-          Carevo was born from a simple yet powerful idea: everyone deserves access to clear, reliable health information.
+          Carevo was born from a simple yet powerful idea: everyone deserves
+          access to clear, reliable health information.
         </p>
         <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground">
-          "Empowering communities with accessible health knowledge is at the core of what we do."
+          "Empowering communities with accessible health knowledge is at the
+          core of what we do."
         </blockquote>
         <div className="flex gap-6 mt-2">
           <div className="flex items-center gap-3">
             <Globe className="h-7 w-7 text-primary" />
             <div>
               <p className="font-semibold">Global Reach</p>
-              <p className="text-sm text-muted-foreground">Accessible worldwide</p>
+              <p className="text-sm text-muted-foreground">
+                Accessible worldwide
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <Star className="h-7 w-7 text-primary" />
             <div>
               <p className="font-semibold">Trusted Content</p>
-              <p className="text-sm text-muted-foreground">Expert-verified info</p>
+              <p className="text-sm text-muted-foreground">
+                Expert-verified info
+              </p>
             </div>
           </div>
         </div>
@@ -166,7 +195,6 @@ const AboutSection = () => (
     </div>
   </section>
 );
-
 
 const HowItWorksSection = () => (
   <section id="how-it-works" className="py-20 bg-background px-4 md:px-24">
@@ -180,19 +208,35 @@ const HowItWorksSection = () => (
       </div>
       <div className="grid md:grid-cols-3 gap-12 text-center items-start">
         {[
-          { icon: MessageCircle, title: 'Join Carevo on WhatsApp', description: 'Receive a welcome voice note to begin.' },
-          { icon: PlayCircle, title: 'Choose Your Language', description: 'Guided by simple voice prompts.' },
-          { icon: HeartHandshake, title: 'Get Health Tips', description: 'Audio notes you can replay anytime.' },
+          {
+            icon: MessageCircle,
+            title: 'Join Carevo on WhatsApp',
+            description: 'Receive a welcome voice note to begin.',
+          },
+          {
+            icon: PlayCircle,
+            title: 'Choose Your Language',
+            description: 'Guided by simple voice prompts.',
+          },
+          {
+            icon: HeartHandshake,
+            title: 'Get Health Tips',
+            description: 'Audio notes you can replay anytime.',
+          },
         ].map((step, index) => (
           <div key={step.title} className="flex flex-col items-center p-4">
             <div className="relative mb-6">
-                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center">
-                    <step.icon className="h-8 w-8 text-primary" />
-                </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">{index + 1}</div>
+              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center">
+                <step.icon className="h-8 w-8 text-primary" />
+              </div>
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                {index + 1}
+              </div>
             </div>
             <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-            <p className="text-fluid-p text-muted-foreground">{step.description}</p>
+            <p className="text-fluid-p text-muted-foreground">
+              {step.description}
+            </p>
           </div>
         ))}
       </div>
@@ -202,12 +246,27 @@ const HowItWorksSection = () => (
 
 const WhoItsForSection = () => {
   const audiences = [
-    { icon: Users, title: 'Communities', description: 'With limited literacy or internet access.' },
-    { icon: Building, title: 'NGOs & Health Ministries', description: 'For public health and education campaigns.' },
-    { icon: HeartHandshake, title: 'Families & Caregivers', description: 'For trusted, simple health education.' },
+    {
+      icon: Users,
+      title: 'Communities',
+      description: 'With limited literacy or internet access.',
+    },
+    {
+      icon: Building,
+      title: 'NGOs & Health Ministries',
+      description: 'For public health and education campaigns.',
+    },
+    {
+      icon: HeartHandshake,
+      title: 'Families & Caregivers',
+      description: 'For trusted, simple health education.',
+    },
   ];
   return (
-    <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl px-4 md:px-24">
+    <section
+      id="who-its-for"
+      className="py-24 bg-secondary/50 rounded-2xl px-4 md:px-24"
+    >
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-fluid-h2 font-bold text-foreground">
@@ -218,7 +277,10 @@ const WhoItsForSection = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {audiences.map(audience => (
-            <Card key={audience.title} className="text-center shadow-md hover:shadow-lg transition-all duration-300 rounded-xl hover:-translate-y-1">
+            <Card
+              key={audience.title}
+              className="text-center shadow-md hover:shadow-lg transition-all duration-300 rounded-xl hover:-translate-y-1"
+            >
               <CardHeader className="items-center">
                 <div className="bg-accent/10 rounded-full p-4 w-fit mb-4">
                   <audience.icon className="h-8 w-8 text-accent" />
@@ -226,7 +288,9 @@ const WhoItsForSection = () => {
                 <CardTitle className="text-xl">{audience.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-fluid-p text-muted-foreground">{audience.description}</p>
+                <p className="text-fluid-p text-muted-foreground">
+                  {audience.description}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -236,48 +300,59 @@ const WhoItsForSection = () => {
   );
 };
 
-
 const FinalCTASection = () => (
-    <section id="cta" className="bg-background py-24 px-4 md:px-24">
-        <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16">
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full animate-pulse-slow"></div>
-            <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full animate-pulse-slow animation-delay-3000"></div>
-            <h2 className="text-fluid-h2 font-bold">Start Learning With Just a Voice Note.</h2>
-            <div className="mt-8">
-                <Button asChild size="lg" variant="secondary" className="bg-background text-primary hover:bg-background/90">
-                    <a
-                      href={WHATSAPP_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Try Carevo on WhatsApp"
-                    >
-                        <WhatsAppIcon className="h-5 w-5" />
-                        Try Carevo on WhatsApp
-                    </a>
-                </Button>
-            </div>
-            <p className="mt-4 text-primary-foreground/80">Free. Simple. Life-saving.</p>
-        </div>
-    </section>
+  <section id="cta" className="bg-background py-24 px-4 md:px-24">
+    <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16">
+      <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full animate-pulse-slow"></div>
+      <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full animate-pulse-slow animation-delay-3000"></div>
+      <h2 className="text-fluid-h2 font-bold">
+        Start Learning With Just a Voice Note.
+      </h2>
+      <div className="mt-8">
+        <Button
+          asChild
+          size="lg"
+          variant="secondary"
+          className="bg-background text-primary hover:bg-background/90"
+        >
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Try Carevo on WhatsApp"
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+            Try Carevo on WhatsApp
+          </a>
+        </Button>
+      </div>
+      <p className="mt-4 text-primary-foreground/80">
+        Free. Simple. Life-saving.
+      </p>
+    </div>
+  </section>
 );
 
 const Footer = () => {
-  const { toast } = useToast();
+  const {toast} = useToast();
   const phoneNumber = '+1 (555) 123-4567';
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(phoneNumber).then(() => {
-      toast({
-        title: 'Copied to Clipboard',
-        description: `Phone number ${phoneNumber} copied.`,
+    navigator.clipboard
+      .writeText(phoneNumber)
+      .then(() => {
+        toast({
+          title: 'Copied to Clipboard',
+          description: `Phone number ${phoneNumber} copied.`,
+        });
+      })
+      .catch(err => {
+        toast({
+          variant: 'destructive',
+          title: 'Copy Failed',
+          description: 'Could not copy phone number to clipboard.',
+        });
       });
-    }).catch(err => {
-      toast({
-        variant: 'destructive',
-        title: 'Copy Failed',
-        description: 'Could not copy phone number to clipboard.',
-      });
-    });
   };
 
   return (
@@ -311,13 +386,15 @@ const Footer = () => {
         <div
           className="flex items-center justify-center gap-2 cursor-pointer group"
           onClick={handleCopy}
-          onKeyDown={(e) => e.key === 'Enter' && handleCopy()}
+          onKeyDown={e => e.key === 'Enter' && handleCopy()}
           role="button"
           tabIndex={0}
           aria-label="Copy phone number"
         >
           <Phone className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-          <span className="group-hover:text-primary transition-colors">{phoneNumber}</span>
+          <span className="group-hover:text-primary transition-colors">
+            {phoneNumber}
+          </span>
         </div>
         <p>
           <span className="font-bold">
@@ -329,7 +406,6 @@ const Footer = () => {
     </footer>
   );
 };
-
 
 export default function CarevoLandingPage() {
   return (
@@ -348,5 +424,3 @@ export default function CarevoLandingPage() {
     </div>
   );
 }
-
-    

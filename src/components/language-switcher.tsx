@@ -1,25 +1,25 @@
-"use client"
+'use client';
 
-import * as React from "react"
-import { Check, Languages } from "lucide-react"
+import * as React from 'react';
+import {Check, Languages} from 'lucide-react';
 
-import { Button } from "@/components/ui/button"
+import {Button} from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { cn } from "@/lib/utils"
+} from '@/components/ui/dropdown-menu';
+import {cn} from '@/lib/utils';
 
 const languages = [
-    { name: "English", code: "en" },
-    { name: "Español", code: "es" },
-    { name: "Français", code: "fr" },
-]
+  {name: 'English', code: 'en'},
+  {name: 'Español', code: 'es'},
+  {name: 'Français', code: 'fr'},
+];
 
 export function LanguageSwitcher() {
-  const [selectedLanguage, setSelectedLanguage] = React.useState("en")
+  const [selectedLanguage, setSelectedLanguage] = React.useState('en');
 
   return (
     <DropdownMenu>
@@ -30,17 +30,24 @@ export function LanguageSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="animate-fade-in">
-        {languages.map((lang) => (
-            <DropdownMenuItem 
-                key={lang.code}
-                onClick={() => setSelectedLanguage(lang.code)}
-                className={cn(lang.code === selectedLanguage && "bg-accent/10 font-semibold")}
-            >
-                <Check className={cn("mr-2 h-4 w-4", lang.code === selectedLanguage ? "opacity-100" : "opacity-0")} />
-                {lang.name}
-            </DropdownMenuItem>
+        {languages.map(lang => (
+          <DropdownMenuItem
+            key={lang.code}
+            onClick={() => setSelectedLanguage(lang.code)}
+            className={cn(
+              lang.code === selectedLanguage && 'bg-accent/10 font-semibold'
+            )}
+          >
+            <Check
+              className={cn(
+                'mr-2 h-4 w-4',
+                lang.code === selectedLanguage ? 'opacity-100' : 'opacity-0'
+              )}
+            />
+            {lang.name}
+          </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
