@@ -9,6 +9,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'fluid-p': 'clamp(1rem, 0.95rem + 0.25vw, 1.125rem)', // p
+        'fluid-h2': 'clamp(1.875rem, 1.6rem + 1.25vw, 2.5rem)', // h2
+        'fluid-h1': 'clamp(2.5rem, 2rem + 2.5vw, 3.75rem)', // h1
+      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         serif: ['Merriweather', 'serif'],

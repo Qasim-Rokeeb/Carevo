@@ -166,7 +166,7 @@ const WhyCarevoSection = () => {
   return (
     <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-24">
         <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="text-fluid-h2 font-bold text-foreground">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Closing the Health Information Gap
               </span>
@@ -182,7 +182,7 @@ const WhyCarevoSection = () => {
                         <CardTitle className="text-xl">{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-muted-foreground">{item.description}</p>
+                        <p className="text-fluid-p text-muted-foreground">{item.description}</p>
                     </CardContent>
                 </Card>
             ))}
@@ -208,13 +208,13 @@ const AboutSection = () => (
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
       </div>
       <div className="flex flex-col gap-6">
-        <div className="text-3xl md:text-4xl font-bold text-foreground">
+        <div className="text-fluid-h2 font-bold text-foreground">
           <TypingCarousel
             phrases={['Our Mission: Health Equity for All', 'Our Goal: Accessible Information', 'Our Vision: Empowered Communities']}
             className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
           />
         </div>
-        <p className="text-lg text-muted-foreground">
+        <p className="text-fluid-p text-muted-foreground">
           Carevo was born from a simple yet powerful idea: everyone deserves access to clear, reliable health information.
         </p>
         <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground">
@@ -246,7 +246,7 @@ const HowItWorksSection = () => (
   <section id="how-it-works" className="py-20 bg-background px-4 md:px-24">
     <div className="container">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+        <h2 className="text-fluid-h2 font-bold text-foreground">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Get Started in Seconds
           </span>
@@ -266,7 +266,7 @@ const HowItWorksSection = () => (
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">{index + 1}</div>
             </div>
             <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-            <p className="text-muted-foreground">{step.description}</p>
+            <p className="text-fluid-p text-muted-foreground">{step.description}</p>
           </div>
         ))}
       </div>
@@ -284,7 +284,7 @@ const WhoItsForSection = () => {
     <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl px-4 md:px-24">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-fluid-h2 font-bold text-foreground">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Designed For Everyone
             </span>
@@ -300,7 +300,7 @@ const WhoItsForSection = () => {
                 <CardTitle className="text-xl">{audience.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{audience.description}</p>
+                <p className="text-fluid-p text-muted-foreground">{audience.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -316,7 +316,7 @@ const FinalCTASection = () => (
         <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16">
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full animate-pulse-slow"></div>
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full animate-pulse-slow animation-delay-3000"></div>
-            <h2 className="text-3xl md:text-4xl font-bold">Start Learning With Just a Voice Note.</h2>
+            <h2 className="text-fluid-h2 font-bold">Start Learning With Just a Voice Note.</h2>
             <div className="mt-8">
                 <Button asChild size="lg" variant="secondary" className="bg-background text-primary hover:bg-background/90">
                     <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">

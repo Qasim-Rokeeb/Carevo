@@ -79,12 +79,12 @@ export const HeroSection = () => (
     <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-8 md:px-24">
       <div className="absolute inset-0 -z-10 h-full w-full bg-gradient-to-b from-primary/10 to-transparent" />
       <div className="flex flex-col gap-6 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-up">
+        <h1 className="text-fluid-h1 font-bold tracking-tight animate-fade-up">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Health Guidance You Can Hear, Anytime.
           </span>
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-fluid-p text-muted-foreground max-w-2xl mx-auto">
           Carevo delivers life-saving health education through WhatsApp voice notes in your local&nbsp;language.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
