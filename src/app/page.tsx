@@ -15,6 +15,7 @@ import Link from 'next/link';
 import { HeroSection } from '@/components/hero-section';
 import { FeaturesSection } from '@/components/features-section';
 import Image from 'next/image';
+import { TypingCarousel } from '@/components/typing-carousel';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -202,11 +203,12 @@ const AboutSection = () => (
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
       </div>
       <div className="flex flex-col gap-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Our Mission: Health Equity for All
-          </span>
-        </h2>
+        <div className="text-3xl md:text-4xl font-bold text-foreground">
+          <TypingCarousel
+            phrases={['Our Mission: Health Equity for All', 'Our Goal: Accessible Information', 'Our Vision: Empowered Communities']}
+            className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+          />
+        </div>
         <p className="text-lg text-muted-foreground">
           Carevo was born from a simple yet powerful idea: everyone deserves access to clear, reliable health information.
         </p>
