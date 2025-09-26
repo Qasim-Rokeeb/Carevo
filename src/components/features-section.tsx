@@ -26,8 +26,12 @@ export const FeaturesSection = () => {
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {features.map((feature) => (
-                    <div key={feature.title} className="flex flex-col items-center text-center gap-3 p-4 rounded-xl">
+                {features.map((feature, index) => (
+                    <div 
+                        key={feature.title} 
+                        className="flex flex-col items-center text-center gap-3 p-4 rounded-xl animate-fade-up"
+                        style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'forwards', opacity: 0 }}
+                    >
                         <div className="bg-background rounded-full p-3 shadow">
                            <feature.icon className="h-6 w-6 text-accent" />
                         </div>
