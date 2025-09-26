@@ -43,7 +43,7 @@ export const FeaturesSection = () => {
   return (
     <section
       id="features"
-      className="container py-24 bg-secondary/50 rounded-2xl px-8 md:px-24"
+      className="container py-24 bg-secondary/50 rounded-2xl px-8 md:px-24 scroll-mt-24"
     >
       <div className="text-center mb-12">
         <h2 className="text-fluid-h2 font-bold text-foreground mb-2">

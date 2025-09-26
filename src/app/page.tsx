@@ -103,7 +103,7 @@ const WhyCarevoSection = () => {
   return (
     <section
       id="why-carevo"
-      className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-24"
+      className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-24 scroll-mt-24"
     >
       <div className="text-center mb-12">
         <h2 className="text-fluid-h2 font-bold text-foreground">
@@ -138,7 +138,10 @@ const WhyCarevoSection = () => {
 };
 
 const AboutSection = () => (
-  <section id="about" className="container py-20 px-4 md:px-24 overflow-hidden">
+  <section
+    id="about"
+    className="container py-20 px-4 md:px-24 overflow-hidden scroll-mt-24"
+  >
     <div className="grid md:grid-cols-2 gap-16 items-center">
       <div className="relative rounded-lg overflow-hidden shadow-xl">
         <Image
@@ -197,7 +200,10 @@ const AboutSection = () => (
 );
 
 const HowItWorksSection = () => (
-  <section id="how-it-works" className="py-20 bg-background px-4 md:px-24">
+  <section
+    id="how-it-works"
+    className="py-20 bg-background px-4 md:px-24 scroll-mt-24"
+  >
     <div className="container">
       <div className="text-center mb-16">
         <h2 className="text-fluid-h2 font-bold text-foreground">
@@ -265,7 +271,7 @@ const WhoItsForSection = () => {
   return (
     <section
       id="who-its-for"
-      className="py-24 bg-secondary/50 rounded-2xl px-4 md:px-24"
+      className="py-24 bg-secondary/50 rounded-2xl px-4 md:px-24 scroll-mt-24"
     >
       <div className="container">
         <div className="text-center mb-12">
@@ -301,7 +307,10 @@ const WhoItsForSection = () => {
 };
 
 const FinalCTASection = () => (
-  <section id="cta" className="bg-background py-24 px-4 md:px-24">
+  <section
+    id="cta"
+    className="bg-background py-24 px-4 md:px-24 scroll-mt-24"
+  >
     <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16">
       <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full animate-pulse-slow"></div>
       <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full animate-pulse-slow animation-delay-3000"></div>
