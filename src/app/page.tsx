@@ -1,3 +1,6 @@
+
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
@@ -8,6 +11,7 @@ import {
   HeartHandshake,
   Globe,
   Star,
+  Phone,
 } from 'lucide-react';
 import type { SVGProps } from 'react';
 import { HeroSection } from '@/components/hero-section';
@@ -16,6 +20,7 @@ import Image from 'next/image';
 import { TypingCarousel } from '@/components/typing-carousel';
 import { Header } from '@/components/header';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
+import { useToast } from '@/hooks/use-toast';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -256,43 +261,75 @@ const FinalCTASection = () => (
     </section>
 );
 
-const Footer = () => (
-  <footer className="border-t bg-secondary/50 animate-fade-in duration-500 relative overflow-hidden">
-    <div className="absolute inset-0 z-0 opacity-[0.03]">
-      <svg
-        width="100%"
-        height="100%"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <pattern
-            id="plus-pattern"
-            width="20"
-            height="20"
-            patternUnits="userSpaceOnUse"
-            patternTransform="rotate(45)"
-          >
-            <path
-              d="M10 0 V20 M0 10 H20"
-              stroke="hsl(var(--foreground))"
-              strokeWidth="1.5"
-            />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#plus-pattern)" />
-      </svg>
-    </div>
-    <div className="container py-6 text-center text-muted-foreground px-4 md:px-24 relative z-10">
-      <p>
-        <span className="font-bold">
-          &copy; {new Date().getFullYear()} Carevo.
-        </span>{' '}
-        All Rights Reserved.
-      </p>
-    </div>
-  </footer>
-);
+const Footer = () => {
+  const { toast } = useToast();
+  const phoneNumber = '+1 (555) 123-4567';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      toast({
+        title: 'Copied to Clipboard',
+        description: `Phone number ${phoneNumber} copied.`,
+      });
+    }).catch(err => {
+      toast({
+        variant: 'destructive',
+        title: 'Copy Failed',
+        description: 'Could not copy phone number to clipboard.',
+      });
+    });
+  };
+
+  return (
+    <footer className="border-t bg-secondary/50 animate-fade-in duration-500 relative overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-[0.03]">
+        <svg
+          width="100%"
+          height="100%"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <pattern
+              id="plus-pattern"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+              patternTransform="rotate(45)"
+            >
+              <path
+                d="M10 0 V20 M0 10 H20"
+                stroke="hsl(var(--foreground))"
+                strokeWidth="1.5"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#plus-pattern)" />
+        </svg>
+      </div>
+      <div className="container py-8 text-center text-muted-foreground px-4 md:px-24 relative z-10 flex flex-col gap-4">
+        <div
+          className="flex items-center justify-center gap-2 cursor-pointer group"
+          onClick={handleCopy}
+          onKeyDown={(e) => e.key === 'Enter' && handleCopy()}
+          role="button"
+          tabIndex={0}
+          aria-label="Copy phone number"
+        >
+          <Phone className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          <span className="group-hover:text-primary transition-colors">{phoneNumber}</span>
+        </div>
+        <p>
+          <span className="font-bold">
+            &copy; {new Date().getFullYear()} Carevo.
+          </span>{' '}
+          All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+  );
+};
+
 
 export default function CarevoLandingPage() {
   return (
@@ -311,3 +348,5 @@ export default function CarevoLandingPage() {
     </div>
   );
 }
+
+    
