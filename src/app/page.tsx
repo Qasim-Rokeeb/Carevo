@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
-  Languages,
   MessageCircle,
   PlayCircle,
   Users,
@@ -17,6 +16,7 @@ import { FeaturesSection } from '@/components/features-section';
 import Image from 'next/image';
 import { TypingCarousel } from '@/components/typing-carousel';
 import { ModeToggle } from '@/components/mode-toggle';
+import { LanguageSwitcher } from '@/components/language-switcher';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -91,6 +91,7 @@ const Header = () => (
             Start on WhatsApp
           </a>
         </Button>
+        <LanguageSwitcher />
         <ModeToggle />
       </div>
     </div>
