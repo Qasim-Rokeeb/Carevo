@@ -3,33 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
   }
-
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  figure,
-  blockquote,
-  dl,
-  dd {
-    margin: 0;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.7;
 }
 
 @layer base {
@@ -93,4 +70,12 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
 }

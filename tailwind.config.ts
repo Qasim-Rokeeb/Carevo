@@ -126,6 +126,12 @@ export default {
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
           },
         },
+        ripple: {
+          to: {
+            transform: 'scale(4)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -136,6 +142,7 @@ export default {
         'float': 'float 3s ease-in-out infinite',
         'blink': 'blink 1s step-end infinite',
         bounce: 'bounce 1s infinite',
+        ripple: 'ripple 600ms linear',
       },
     },
   },
