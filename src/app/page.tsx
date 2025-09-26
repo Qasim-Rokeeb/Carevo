@@ -186,7 +186,7 @@ const WhyCarevoSection = () => {
                 </Card>
             ))}
         </div>
-        <div className="w-full h-px bg-border my-20" />
+        <div className="w-full border-b my-20" />
     </section>
   );
 }

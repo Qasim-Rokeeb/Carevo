@@ -57,7 +57,7 @@ const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
       
       <path d="M0,350 Q250,320 500,350 L500,350 L0,350 Z" fill="hsl(var(--primary) / 0.05)" />
       
-      <g transform="translate(20, 20)">
+      <g transform="translate(1.25rem, 1.25rem)">
         <rect x="200" y="75" width="100" height="200" rx="15" fill="hsl(var(--card))" stroke="hsl(var(--border))" strokeWidth="1.5"/>
         <rect x="210" y="85" width="80" height="150" rx="5" fill="hsl(var(--background))"/>
         <line x1="235" y1="260" x2="265" y2="260" stroke="hsl(var(--border))" strokeWidth="2" strokeLinecap="round" />
@@ -105,4 +105,3 @@ export const HeroSection = () => (
       <ScrollDownArrow className="absolute bottom-10 left-1/2 -translate-x-1/2" />
     </section>
   );
-  

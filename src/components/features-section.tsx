@@ -27,7 +27,7 @@ export const FeaturesSection = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {features.map((feature) => (
-                    <div key={feature.title} className="flex flex-col items-center text-center gap-3 p-4 rounded-xl" style={{ borderRadius: '12px' }}>
+                    <div key={feature.title} className="flex flex-col items-center text-center gap-3 p-4 rounded-xl">
                         <div className="bg-background rounded-full p-3 shadow">
                            <feature.icon className="h-6 w-6 text-accent" />
                         </div>
