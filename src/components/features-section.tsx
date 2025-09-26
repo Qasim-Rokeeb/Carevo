@@ -43,31 +43,31 @@ export const FeaturesSection = () => {
   return (
     <section
       id="features"
-      className="container py-24 bg-secondary/50 rounded-2xl px-8 md:px-24 scroll-mt-24"
+      className="container scroll-mt-24 rounded-2xl bg-secondary/50 px-8 py-24 md:px-24"
     >
-      <div className="text-center mb-12">
+      <div className="mb-12 text-center">
         <h2 className="text-fluid-h2 font-bold text-foreground mb-2">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Powerful Features, Simple Interface
           </span>
         </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
           <div
             key={feature.title}
-            className="flex flex-col items-center text-center gap-3 p-4 rounded-xl animate-fade-up"
+            className="animate-fade-up flex flex-col items-center gap-3 rounded-xl p-4 text-center"
             style={{
               animationDelay: `${index * 150}ms`,
               animationFillMode: 'forwards',
               opacity: 0,
             }}
           >
-            <div className="bg-background rounded-full p-3 shadow">
+            <div className="rounded-full bg-background p-3 shadow">
               <feature.icon className="h-6 w-6 text-accent" />
             </div>
-            <h3 className="font-semibold text-center">{feature.title}</h3>
-            <p className="text-sm text-muted-foreground text-center">
+            <h3 className="text-center font-semibold">{feature.title}</h3>
+            <p className="text-center text-sm text-muted-foreground">
               {feature.description}
             </p>
           </div>
