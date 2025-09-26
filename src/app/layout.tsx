@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from '@/components/theme-provider';
+import { CookieConsentBanner } from '@/components/cookie-consent-banner';
 
 export const metadata: Metadata = {
   title: 'Carevo',
@@ -30,6 +31,7 @@ export default function RootLayout({
         >
           {children}
           <Toaster />
+          <CookieConsentBanner />
         </ThemeProvider>
       </body>
     </html>
