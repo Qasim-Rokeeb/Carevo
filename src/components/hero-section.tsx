@@ -89,7 +89,12 @@ export const HeroSection = () => (
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Start a conversation with Carevo on WhatsApp"
+            >
               <WhatsAppIcon className="h-5 w-5" />
               Start on WhatsApp
             </a>

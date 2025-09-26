@@ -86,7 +86,12 @@ const Header = () => (
       </Link>
       <div className='flex items-center gap-2'>
         <Button asChild>
-          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Start a conversation with Carevo on WhatsApp"
+          >
             <WhatsAppIcon className="h-5 w-5" />
             Start on WhatsApp
           </a>
@@ -319,7 +324,12 @@ const FinalCTASection = () => (
             <h2 className="text-fluid-h2 font-bold">Start Learning With Just a Voice Note.</h2>
             <div className="mt-8">
                 <Button asChild size="lg" variant="secondary" className="bg-background text-primary hover:bg-background/90">
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={WHATSAPP_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Try Carevo on WhatsApp"
+                    >
                         <WhatsAppIcon className="h-5 w-5" />
                         Try Carevo on WhatsApp
                     </a>
