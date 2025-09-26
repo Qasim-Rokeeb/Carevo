@@ -35,7 +35,8 @@ export function LanguageSwitcher() {
             key={lang.code}
             onClick={() => setSelectedLanguage(lang.code)}
             className={cn(
-              lang.code === selectedLanguage && 'bg-accent/10 font-semibold'
+              lang.code === selectedLanguage &&
+                'bg-accent/10 font-semibold shadow-[0_0_8px_hsl(var(--accent))]'
             )}
           >
             <Check
