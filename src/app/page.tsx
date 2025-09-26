@@ -111,7 +111,7 @@ const WhyCarevoSection = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
             {items.map(item => (
-                <Card key={item.title} className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 border-t-4 border-transparent hover:border-primary rounded-xl">
+                <Card key={item.title} className="text-center shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-transparent hover:border-primary rounded-xl hover:-translate-y-1">
                     <CardHeader>
                         <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
                             <item.icon className="h-7 w-7 text-primary" />
@@ -140,6 +140,7 @@ const AboutSection = () => (
           height={400}
           className="w-full h-full object-cover"
           data-ai-hint="healthcare worker smiling"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
       </div>
@@ -227,7 +228,7 @@ const WhoItsForSection = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {audiences.map(audience => (
-            <Card key={audience.title} className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 rounded-xl">
+            <Card key={audience.title} className="text-center shadow-md hover:shadow-lg transition-all duration-300 rounded-xl hover:-translate-y-1">
               <CardHeader className="items-center">
                 <div className="bg-accent/10 rounded-full p-4 w-fit mb-4">
                   <audience.icon className="h-8 w-8 text-accent" />
