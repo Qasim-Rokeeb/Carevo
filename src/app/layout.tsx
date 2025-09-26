@@ -7,6 +7,7 @@ import {CookieConsentBanner} from '@/components/cookie-consent-banner';
 export const metadata: Metadata = {
   title: 'Carevo',
   description: 'Health Information You Can Hear, Anytime, Anywhere.',
+  manifest: '/manifest.webmanifest',
 };
 
 export default function RootLayout({
