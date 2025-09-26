@@ -115,6 +115,18 @@ const SidebarProvider = React.forwardRef<
     // We add a state so that we can do data-state="expanded" or "collapsed".
     // This makes it easier to style the sidebar with Tailwind classes.
     const state = open ? "expanded" : "collapsed"
+    
+    React.useEffect(() => {
+      if (isMobile && openMobile) {
+        document.body.style.overflow = "hidden"
+      } else {
+        document.body.style.overflow = ""
+      }
+
+      return () => {
+        document.body.style.overflow = ""
+      }
+    }, [isMobile, openMobile])
 
     const contextValue = React.useMemo<SidebarContext>(
       () => ({
@@ -625,7 +637,7 @@ SidebarMenuAction.displayName = "SidebarMenuAction"
 
 const SidebarMenuBadge = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<"div">
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
