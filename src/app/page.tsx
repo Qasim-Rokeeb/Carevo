@@ -203,7 +203,7 @@ const AboutSection = () => (
           height={400}
           className="w-full h-auto object-cover"
           data-ai-hint="healthcare worker smiling"
-          loading="lazy"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
       </div>
