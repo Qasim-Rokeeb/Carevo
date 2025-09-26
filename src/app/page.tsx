@@ -162,7 +162,7 @@ const AboutSection = () => (
           data-ai-hint="healthcare worker smiling"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       </div>
       <div className="flex flex-col gap-6">
         <div className="text-fluid-h2 font-bold text-foreground">
