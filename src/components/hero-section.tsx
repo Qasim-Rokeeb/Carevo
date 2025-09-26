@@ -76,7 +76,7 @@ const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
 export const HeroSection = () => (
     <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-8 md:px-16">
-      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-primary/5 to-transparent -z-10" />
+      <div className="absolute inset-0 -z-10 h-full w-full bg-gradient-to-b from-primary/10 to-transparent" />
       <div className="flex flex-col gap-6 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-up">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
