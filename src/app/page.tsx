@@ -251,7 +251,7 @@ const HowItWorksSection = () => (
           </span>
         </h2>
       </div>
-      <div className="grid md:grid-cols-3 gap-12 text-center">
+      <div className="grid md:grid-cols-3 gap-12 text-center items-start">
         {[
           { icon: MessageCircle, title: 'Join Carevo on WhatsApp', description: 'Receive a welcome voice note to begin.' },
           { icon: PlayCircle, title: 'Choose Your Language', description: 'Guided by simple voice prompts.' },
