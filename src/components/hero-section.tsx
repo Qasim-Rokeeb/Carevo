@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import type { SVGProps } from 'react';
+import { ScrollDownArrow } from './scroll-down-arrow';
 
 const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg 
@@ -101,6 +102,7 @@ export const HeroSection = () => (
       <div className="flex justify-center items-center">
          <HeroIllustration className="w-full max-w-md lg:max-w-lg h-auto" data-ai-hint="phone whatsapp voice" />
       </div>
+      <ScrollDownArrow className="absolute bottom-10 left-1/2 -translate-x-1/2" />
     </section>
   );
   
