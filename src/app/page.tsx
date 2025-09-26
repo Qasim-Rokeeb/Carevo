@@ -20,6 +20,8 @@ import {TypingCarousel} from '@/components/typing-carousel';
 import {Header} from '@/components/header';
 import {WhatsAppIcon} from '@/components/ui/whatsapp-icon';
 import {useToast} from '@/hooks/use-toast';
+import {useIsMobile} from '@/hooks/use-mobile';
+import {useIsClient} from '@/hooks/use-is-client';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -103,23 +105,23 @@ const WhyCarevoSection = () => {
   return (
     <section
       id="why-carevo"
-      className="container py-20 bg-secondary/50 rounded-2xl px-4 md:px-24 scroll-mt-24"
+      className="container scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-20 md:px-24"
     >
-      <div className="text-center mb-12">
+      <div className="mb-12 text-center">
         <h2 className="text-fluid-h2 font-bold text-foreground">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Closing the Health Information Gap
           </span>
         </h2>
       </div>
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid gap-8 md:grid-cols-3">
         {items.map(item => (
           <Card
             key={item.title}
-            className="text-center shadow-md hover:shadow-lg transition-all duration-300 border-t-4 border-transparent hover:border-primary rounded-xl hover:-translate-y-1"
+            className="rounded-xl border-t-4 border-transparent text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
           >
             <CardHeader>
-              <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
+              <div className="mx-auto w-fit rounded-full bg-primary/10 p-3">
                 <item.icon className="h-7 w-7 text-primary" />
               </div>
               <CardTitle className="text-xl">{item.title}</CardTitle>
@@ -132,7 +134,7 @@ const WhyCarevoSection = () => {
           </Card>
         ))}
       </div>
-      <div className="w-full border-b my-20" />
+      <div className="my-20 w-full border-b" />
     </section>
   );
 };
@@ -140,16 +142,16 @@ const WhyCarevoSection = () => {
 const AboutSection = () => (
   <section
     id="about"
-    className="container py-20 px-4 md:px-24 overflow-hidden scroll-mt-24"
+    className="container scroll-mt-24 overflow-hidden px-4 py-20 md:px-24"
   >
-    <div className="grid md:grid-cols-2 gap-16 items-center">
-      <div className="relative rounded-lg overflow-hidden shadow-xl">
+    <div className="grid items-center gap-16 md:grid-cols-2">
+      <div className="relative overflow-hidden rounded-lg shadow-xl">
         <Image
           src="https://picsum.photos/seed/about/600/400"
           alt="A healthcare worker smiling"
           width={600}
           height={400}
-          className="w-full h-auto object-cover"
+          className="h-auto w-full object-cover"
           data-ai-hint="healthcare worker smiling"
           priority
         />
@@ -174,7 +176,7 @@ const AboutSection = () => (
           "Empowering communities with accessible health knowledge is at the
           core of what we do."
         </blockquote>
-        <div className="flex gap-6 mt-2">
+        <div className="mt-2 flex gap-6">
           <div className="flex items-center gap-3">
             <Globe className="h-7 w-7 text-primary" />
             <div>
@@ -202,17 +204,17 @@ const AboutSection = () => (
 const HowItWorksSection = () => (
   <section
     id="how-it-works"
-    className="py-20 bg-background px-4 md:px-24 scroll-mt-24"
+    className="scroll-mt-24 bg-background px-4 py-20 md:px-24"
   >
     <div className="container">
-      <div className="text-center mb-16">
+      <div className="mb-16 text-center">
         <h2 className="text-fluid-h2 font-bold text-foreground">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Get Started in Seconds
           </span>
         </h2>
       </div>
-      <div className="grid md:grid-cols-3 gap-12 text-center items-start">
+      <div className="grid items-start gap-12 text-center md:grid-cols-3">
         {[
           {
             icon: MessageCircle,
@@ -232,14 +234,14 @@ const HowItWorksSection = () => (
         ].map((step, index) => (
           <div key={step.title} className="flex flex-col items-center p-4">
             <div className="relative mb-6">
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
                 <step.icon className="h-8 w-8 text-primary" />
               </div>
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+              <div className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary font-bold text-white text-sm">
                 {index + 1}
               </div>
             </div>
-            <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+            <h3 className="mb-2 text-xl font-semibold">{step.title}</h3>
             <p className="text-fluid-p text-muted-foreground">
               {step.description}
             </p>
@@ -271,24 +273,24 @@ const WhoItsForSection = () => {
   return (
     <section
       id="who-its-for"
-      className="py-24 bg-secondary/50 rounded-2xl px-4 md:px-24 scroll-mt-24"
+      className="scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-24 md:px-24"
     >
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="mb-12 text-center">
           <h2 className="text-fluid-h2 font-bold text-foreground">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Designed For Everyone
             </span>
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-3">
           {audiences.map(audience => (
             <Card
               key={audience.title}
-              className="text-center shadow-md hover:shadow-lg transition-all duration-300 rounded-xl hover:-translate-y-1"
+              className="rounded-xl text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <CardHeader className="items-center">
-                <div className="bg-accent/10 rounded-full p-4 w-fit mb-4">
+                <div className="w-fit rounded-full bg-accent/10 p-4">
                   <audience.icon className="h-8 w-8 text-accent" />
                 </div>
                 <CardTitle className="text-xl">{audience.title}</CardTitle>
@@ -306,41 +308,66 @@ const WhoItsForSection = () => {
   );
 };
 
-const FinalCTASection = () => (
-  <section
-    id="cta"
-    className="bg-background py-24 px-4 md:px-24 scroll-mt-24"
-  >
-    <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16">
-      <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full animate-pulse-slow"></div>
-      <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full animate-pulse-slow animation-delay-3000"></div>
-      <h2 className="text-fluid-h2 font-bold">
-        Start Learning With Just a Voice Note.
-      </h2>
-      <div className="mt-8">
-        <Button
-          asChild
-          size="lg"
-          variant="secondary"
-          className="bg-background text-primary hover:bg-background/90"
-        >
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Try Carevo on WhatsApp"
+const FinalCTASection = () => {
+  const isMobile = useIsMobile();
+  const isClient = useIsClient();
+  const {toast} = useToast();
+
+  const handleShare = async () => {
+    if (isClient && navigator.share && isMobile) {
+      try {
+        await navigator.share({
+          title: 'Carevo',
+          text: 'Check out Carevo for health guidance you can hear, anytime.',
+          url: WHATSAPP_LINK,
+        });
+        toast({title: 'Link shared!'});
+      } catch (error) {
+        toast({
+          variant: 'destructive',
+          title: 'Could not share',
+          description: 'There was an error trying to share the link.',
+        });
+      }
+    } else {
+      window.open(WHATSAPP_LINK, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  return (
+    <section
+      id="cta"
+      className="scroll-mt-24 bg-background px-4 py-24 md:px-24"
+    >
+      <div className="container relative overflow-hidden rounded-2xl bg-primary/90 p-16 text-center text-primary-foreground">
+        <div className="animate-pulse-slow absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-background/10"></div>
+        <div className="animation-delay-3000 animate-pulse-slow absolute -right-10 -top-10 h-48 w-48 rounded-full bg-background/10"></div>
+        <h2 className="text-fluid-h2 font-bold">
+          Start Learning With Just a Voice Note.
+        </h2>
+        <div className="mt-8">
+          <Button
+            size="lg"
+            variant="secondary"
+            className="bg-background text-primary hover:bg-background/90"
+            onClick={handleShare}
+            aria-label="Try Carevo on WhatsApp or share"
           >
             <WhatsAppIcon className="h-5 w-5" />
-            Try Carevo on WhatsApp
-          </a>
-        </Button>
+            <span>
+              {isClient && isMobile
+                ? 'Share Carevo'
+                : 'Try Carevo on WhatsApp'}
+            </span>
+          </Button>
+        </div>
+        <p className="mt-4 text-primary-foreground/80">
+          Free. Simple. Life-saving.
+        </p>
       </div>
-      <p className="mt-4 text-primary-foreground/80">
-        Free. Simple. Life-saving.
-      </p>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const Footer = () => {
   const {toast} = useToast();
@@ -365,7 +392,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t bg-secondary/50 animate-fade-in duration-500 relative overflow-hidden">
+    <footer className="relative animate-fade-in duration-500 overflow-hidden border-t bg-secondary/50">
       <div className="absolute inset-0 z-0 opacity-[0.03]">
         <svg
           width="100%"
@@ -391,17 +418,17 @@ const Footer = () => {
           <rect width="100%" height="100%" fill="url(#plus-pattern)" />
         </svg>
       </div>
-      <div className="container py-8 text-center text-muted-foreground px-4 md:px-24 relative z-10 flex flex-col gap-4">
+      <div className="container relative z-10 flex flex-col gap-4 px-4 py-8 text-center text-muted-foreground md:px-24">
         <div
-          className="flex items-center justify-center gap-2 cursor-pointer group"
+          className="group flex cursor-pointer items-center justify-center gap-2"
           onClick={handleCopy}
           onKeyDown={e => e.key === 'Enter' && handleCopy()}
           role="button"
           tabIndex={0}
           aria-label="Copy phone number"
         >
-          <Phone className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-          <span className="group-hover:text-primary transition-colors">
+          <Phone className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+          <span className="transition-colors group-hover:text-primary">
             {phoneNumber}
           </span>
         </div>
@@ -418,7 +445,7 @@ const Footer = () => {
 
 export default function CarevoLandingPage() {
   return (
-    <div className="bg-background text-foreground font-sans">
+    <div className="bg-background font-sans text-foreground">
       <Header />
       <main>
         <HeroSection />
