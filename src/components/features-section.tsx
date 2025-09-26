@@ -17,7 +17,7 @@ export const FeaturesSection = () => {
         { icon: ClipboardCheck, title: "Verified Information", description: "Content from trusted health sources."}
     ];
     return (
-        <section id="features" className="container py-24 bg-secondary/50 rounded-2xl px-8 md:px-16">
+        <section id="features" className="container py-24 bg-secondary/50 rounded-2xl px-8 md:px-24">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -27,7 +27,7 @@ export const FeaturesSection = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {features.map((feature) => (
-                    <div key={feature.title} className="flex flex-col items-center text-center gap-3">
+                    <div key={feature.title} className="flex flex-col items-center text-center gap-3 p-4 rounded-xl">
                         <div className="bg-background rounded-full p-3 shadow">
                            <feature.icon className="h-6 w-6 text-accent" />
                         </div>

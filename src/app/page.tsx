@@ -78,7 +78,7 @@ const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
 
 const Header = () => (
   <header className="sticky top-0 z-50 w-full animate-fade-in bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-8 md:px-16">
+    <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-8 md:px-24">
       <Link href="/" className="flex items-center gap-2">
         <Logo className="h-8 w-8" />
         <span className="text-2xl font-bold text-primary">Carevo</span>
@@ -100,7 +100,7 @@ const WhyCarevoSection = () => {
     { icon: HeartPulse, title: 'Impactful', description: 'Practical tips on hygiene, childcare, and disease prevention.' },
   ];
   return (
-    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-8 md:px-16">
+    <section id="why-carevo" className="container py-20 bg-secondary/50 rounded-2xl px-8 md:px-24">
         <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -110,7 +110,7 @@ const WhyCarevoSection = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
             {items.map(item => (
-                <Card key={item.title} className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 border-t-4 border-transparent hover:border-primary">
+                <Card key={item.title} className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 border-t-4 border-transparent hover:border-primary rounded-xl">
                     <CardHeader>
                         <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-4">
                             <item.icon className="h-7 w-7 text-primary" />
@@ -129,7 +129,7 @@ const WhyCarevoSection = () => {
 }
 
 const AboutSection = () => (
-  <section id="about" className="container py-20 px-8 md:px-16 overflow-hidden">
+  <section id="about" className="container py-20 px-8 md:px-24 overflow-hidden">
     <div className="grid md:grid-cols-2 gap-16 items-center">
       <div className="relative rounded-lg overflow-hidden shadow-xl">
         <img
@@ -175,7 +175,7 @@ const AboutSection = () => (
 
 
 const HowItWorksSection = () => (
-  <section id="how-it-works" className="py-20 bg-background px-8 md:px-16">
+  <section id="how-it-works" className="py-20 bg-background px-8 md:px-24">
     <div className="container">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -213,7 +213,7 @@ const WhoItsForSection = () => {
     { icon: HeartHandshake, title: 'Families & Caregivers', description: 'For trusted, simple health education.' },
   ];
   return (
-    <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl px-8 md:px-16">
+    <section id="who-its-for" className="py-24 bg-secondary/50 rounded-2xl px-8 md:px-24">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -224,7 +224,7 @@ const WhoItsForSection = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {audiences.map(audience => (
-            <Card key={audience.title} className="text-center shadow-md hover:shadow-lg transition-shadow duration-300">
+            <Card key={audience.title} className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 rounded-xl">
               <CardHeader className="items-center">
                 <div className="bg-accent/10 rounded-full p-4 w-fit mb-4">
                   <audience.icon className="h-8 w-8 text-accent" />
@@ -244,7 +244,7 @@ const WhoItsForSection = () => {
 
 
 const FinalCTASection = () => (
-    <section id="cta" className="bg-background py-24 px-8 md:px-16">
+    <section id="cta" className="bg-background py-24 px-8 md:px-24">
         <div className="container text-center relative overflow-hidden rounded-2xl bg-primary/90 text-primary-foreground p-16">
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-background/10 rounded-full animate-pulse-slow"></div>
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-background/10 rounded-full animate-pulse-slow animation-delay-3000"></div>
@@ -264,7 +264,7 @@ const FinalCTASection = () => (
 
 const Footer = () => (
     <footer className="border-t bg-secondary/50 animate-fade-in duration-500">
-        <div className="container py-6 text-center text-muted-foreground px-8 md:px-16">
+        <div className="container py-6 text-center text-muted-foreground px-8 md:px-24">
             <p><span className="font-bold">&copy; {new Date().getFullYear()} Carevo.</span> All Rights Reserved.</p>
         </div>
     </footer>
