@@ -341,11 +341,41 @@ const FinalCTASection = () => (
 );
 
 const Footer = () => (
-    <footer className="border-t bg-secondary/50 animate-fade-in duration-500">
-        <div className="container py-6 text-center text-muted-foreground px-4 md:px-24">
-            <p><span className="font-bold">&copy; {new Date().getFullYear()} Carevo.</span> All Rights Reserved.</p>
-        </div>
-    </footer>
+  <footer className="border-t bg-secondary/50 animate-fade-in duration-500 relative overflow-hidden">
+    <div className="absolute inset-0 z-0 opacity-[0.03]">
+      <svg
+        width="100%"
+        height="100%"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <pattern
+            id="plus-pattern"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(45)"
+          >
+            <path
+              d="M10 0 V20 M0 10 H20"
+              stroke="hsl(var(--foreground))"
+              strokeWidth="1.5"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#plus-pattern)" />
+      </svg>
+    </div>
+    <div className="container py-6 text-center text-muted-foreground px-4 md:px-24 relative z-10">
+      <p>
+        <span className="font-bold">
+          &copy; {new Date().getFullYear()} Carevo.
+        </span>{' '}
+        All Rights Reserved.
+      </p>
+    </div>
+  </footer>
 );
 
 export default function CarevoLandingPage() {
