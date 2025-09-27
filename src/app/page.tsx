@@ -522,7 +522,7 @@ export default function CarevoLandingPage() {
         dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}}
       />
       <Header />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <WhyCarevoSection />
         <AboutSection />

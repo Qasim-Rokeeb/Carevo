@@ -3,6 +3,7 @@ import './globals.css';
 import {Toaster} from '@/components/ui/toaster';
 import {ThemeProvider} from '@/components/theme-provider';
 import {CookieConsentBanner} from '@/components/cookie-consent-banner';
+import {SkipToContent} from '@/components/skip-to-content';
 
 export const metadata: Metadata = {
   title: 'Carevo',
@@ -41,6 +42,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SkipToContent />
           {children}
           <Toaster />
           <CookieConsentBanner />
