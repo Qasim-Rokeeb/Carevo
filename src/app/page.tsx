@@ -25,6 +25,12 @@ import {SwooshDivider} from '@/components/swoosh-divider';
 import {BackToTopButton} from '@/components/back-to-top-button';
 import {ImageWithLoader} from '@/components/image-with-loader';
 import {useConfetti} from '@/components/confetti';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -427,19 +433,28 @@ const Footer = () => {
         </svg>
       </div>
       <div className="container relative z-10 flex flex-col gap-4 px-4 py-8 text-center text-muted-foreground md:px-24">
-        <div
-          className="group flex cursor-pointer items-center justify-center gap-2"
-          onClick={handleCopy}
-          onKeyDown={e => e.key === 'Enter' && handleCopy()}
-          role="button"
-          tabIndex={0}
-          aria-label="Copy phone number"
-        >
-          <Phone className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
-          <span className="transition-colors group-hover:text-primary">
-            {phoneNumber}
-          </span>
-        </div>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div
+                className="group flex cursor-pointer items-center justify-center gap-2"
+                onClick={handleCopy}
+                onKeyDown={e => e.key === 'Enter' && handleCopy()}
+                role="button"
+                tabIndex={0}
+                aria-label="Copy phone number"
+              >
+                <Phone className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+                <span className="transition-colors group-hover:text-primary">
+                  {phoneNumber}
+                </span>
+              </div>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Click to copy phone number</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         <p>
           <span className="font-bold">
             &copy; {new Date().getFullYear()} Carevo.
