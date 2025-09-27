@@ -240,7 +240,7 @@ const HowItWorksSection = () => (
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
                 <step.icon className="h-8 w-8 text-primary" />
               </div>
-              <div className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary font-bold text-white text-sm">
+              <div className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary font-mono font-bold text-white">
                 {index + 1}
               </div>
             </div>
@@ -535,5 +535,3 @@ export default function CarevoLandingPage() {
     </div>
   );
 }
-
-    
