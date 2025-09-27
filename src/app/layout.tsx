@@ -4,6 +4,7 @@ import {Toaster} from '@/components/ui/toaster';
 import {ThemeProvider} from '@/components/theme-provider';
 import {CookieConsentBanner} from '@/components/cookie-consent-banner';
 import {SkipToContent} from '@/components/skip-to-content';
+import {ReducedDataProvider} from '@/contexts/reduced-data-provider';
 
 export const metadata: Metadata = {
   title: 'Carevo',
@@ -42,10 +43,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SkipToContent />
-          {children}
-          <Toaster />
-          <CookieConsentBanner />
+          <ReducedDataProvider>
+            <SkipToContent />
+            {children}
+            <Toaster />
+            <CookieConsentBanner />
+          </ReducedDataProvider>
         </ThemeProvider>
       </body>
     </html>

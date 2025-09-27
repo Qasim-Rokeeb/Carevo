@@ -8,6 +8,7 @@ import {Button} from '@/components/ui/button';
 import {ModeToggle} from '@/components/mode-toggle';
 import {LanguageSwitcher} from '@/components/language-switcher';
 import {WhatsAppIcon} from '@/components/ui/whatsapp-icon';
+import {ReducedDataToggle} from './reduced-data-toggle';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -78,6 +79,7 @@ export const Header = () => {
             </a>
           </Button>
           <LanguageSwitcher />
+          <ReducedDataToggle />
           <ModeToggle />
         </div>
       </div>
