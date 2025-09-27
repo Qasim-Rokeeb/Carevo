@@ -15,7 +15,6 @@ import {
 import type {SVGProps} from 'react';
 import {HeroSection} from '@/components/hero-section';
 import {FeaturesSection} from '@/components/features-section';
-import Image from 'next/image';
 import {TypingCarousel} from '@/components/typing-carousel';
 import {Header} from '@/components/header';
 import {WhatsAppIcon} from '@/components/ui/whatsapp-icon';
@@ -24,6 +23,7 @@ import {useIsMobile} from '@/hooks/use-mobile';
 import {useIsClient} from '@/hooks/use-is-client';
 import {SwooshDivider} from '@/components/swoosh-divider';
 import {BackToTopButton} from '@/components/back-to-top-button';
+import {ImageWithLoader} from '@/components/image-with-loader';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -150,14 +150,13 @@ const AboutSection = () => (
   >
     <div className="grid items-center gap-16 md:grid-cols-2">
       <div className="relative overflow-hidden rounded-lg shadow-xl">
-        <Image
+        <ImageWithLoader
           src="https://picsum.photos/seed/about/600/400"
           alt="A healthcare worker smiling"
           width={600}
           height={400}
           className="h-auto w-full object-cover"
           data-ai-hint="healthcare worker smiling"
-          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       </div>
@@ -536,3 +535,5 @@ export default function CarevoLandingPage() {
     </div>
   );
 }
+
+    
