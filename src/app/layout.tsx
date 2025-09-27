@@ -6,6 +6,7 @@ import {CookieConsentBanner} from '@/components/cookie-consent-banner';
 import {SkipToContent} from '@/components/skip-to-content';
 import {ReducedDataProvider} from '@/contexts/reduced-data-provider';
 import {ConfettiProvider} from '@/components/confetti';
+import {OfflineNotifier} from '@/components/offline-notifier';
 
 export const metadata: Metadata = {
   title: 'Carevo',
@@ -50,6 +51,7 @@ export default function RootLayout({
               {children}
               <Toaster />
               <CookieConsentBanner />
+              <OfflineNotifier />
             </ConfettiProvider>
           </ReducedDataProvider>
         </ThemeProvider>
