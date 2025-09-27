@@ -437,12 +437,13 @@ const Footer = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <div
-                className="group flex cursor-pointer items-center justify-center gap-2"
+                className="animate-fade-up group flex cursor-pointer items-center justify-center gap-2"
                 onClick={handleCopy}
                 onKeyDown={e => e.key === 'Enter' && handleCopy()}
                 role="button"
                 tabIndex={0}
                 aria-label="Copy phone number"
+                style={{animationFillMode: 'forwards', opacity: 0}}
               >
                 <Phone className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
                 <span className="transition-colors group-hover:text-primary">
@@ -455,7 +456,14 @@ const Footer = () => {
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
-        <p>
+        <p
+          className="animate-fade-up"
+          style={{
+            animationDelay: '150ms',
+            animationFillMode: 'forwards',
+            opacity: 0,
+          }}
+        >
           <span className="font-bold">
             &copy; {new Date().getFullYear()} Carevo.
           </span>{' '}
