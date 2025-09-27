@@ -114,7 +114,7 @@ const WhyCarevoSection = () => {
   return (
     <section
       id="why-carevo"
-      className="container relative scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-20 md:px-24 snap-start"
+      className="container relative scroll-mt-24 rounded-2xl bg-secondary px-4 py-20 md:px-24 snap-start"
     >
       <SwooshDivider top className="text-background" />
       <div className="mb-12 text-center">
@@ -283,7 +283,7 @@ const WhoItsForSection = () => {
   return (
     <section
       id="who-its-for"
-      className="relative scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-24 md:px-24 snap-start"
+      className="relative scroll-mt-24 rounded-2xl bg-secondary px-4 py-24 md:px-24 snap-start"
     >
       <SwooshDivider top className="text-background" />
       <div className="container">
@@ -406,7 +406,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative animate-fade-in duration-500 overflow-hidden bg-secondary/50 snap-start before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:bg-gradient-to-r before:from-primary/20 before:via-accent/50 before:to-primary/20">
+    <footer className="relative animate-fade-in duration-500 overflow-hidden bg-secondary snap-start before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:bg-gradient-to-r before:from-primary/20 before:via-accent/50 before:to-primary/20">
       <div className="absolute inset-0 z-0 opacity-[0.03]">
         <svg
           width="100%"
