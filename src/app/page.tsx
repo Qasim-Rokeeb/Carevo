@@ -400,7 +400,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative animate-fade-in duration-500 overflow-hidden border-t bg-secondary/50 snap-start">
+    <footer className="relative animate-fade-in duration-500 overflow-hidden bg-secondary/50 snap-start before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:bg-gradient-to-r before:from-primary/20 before:via-accent/50 before:to-primary/20">
       <div className="absolute inset-0 z-0 opacity-[0.03]">
         <svg
           width="100%"
