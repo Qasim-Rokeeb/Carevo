@@ -449,9 +449,78 @@ const Footer = () => {
   );
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Carevo',
+  url: 'https://carevo.app', // Replace with your actual domain
+  logo: 'https://carevo.app/logo.png', // Replace with your actual logo URL
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1-555-123-4567',
+    contactType: 'Customer Service',
+  },
+  sameAs: [WHATSAPP_LINK], // Add other social media links if available
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I start using Carevo?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Just send a message to our number on WhatsApp to start. You\'ll receive a welcome voice note to guide you through the process.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Carevo free to use?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, Carevo is completely free to use. Our mission is to make health information accessible to everyone.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What makes Carevo accessible?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Carevo works on any phone with WhatsApp, so you don\'t need to download a separate app. Information is provided through audio in local languages, so reading is not required.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who is Carevo for?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Carevo is designed for everyone, especially communities with limited literacy or internet access, NGOs and Health Ministries for public health campaigns, and families or caregivers seeking trusted health education.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What kind of information does Carevo provide?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Carevo provides practical, expert-verified health tips on topics like hygiene, childcare, and disease prevention through easy-to-understand audio notes.',
+      },
+    },
+  ],
+};
+
 export default function CarevoLandingPage() {
   return (
     <div className="bg-background font-sans text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(organizationSchema)}}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}}
+      />
       <Header />
       <main>
         <HeroSection />
