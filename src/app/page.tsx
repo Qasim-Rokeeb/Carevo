@@ -117,11 +117,11 @@ const WhyCarevoSection = () => {
           </span>
         </h2>
       </div>
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 [perspective:1000px] md:grid-cols-3">
         {items.map(item => (
           <Card
             key={item.title}
-            className="rounded-xl border-t-4 border-transparent text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+            className="transform-style-3d rounded-xl border-t-4 border-transparent text-center shadow-md transition-all duration-300 hover:border-primary hover:shadow-lg hover:[transform:rotateX(10deg)_rotateY(-5deg)]"
           >
             <CardHeader>
               <div className="mx-auto w-fit rounded-full bg-primary/10 p-3">
@@ -288,11 +288,11 @@ const WhoItsForSection = () => {
             </span>
           </h2>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 [perspective:1000px] md:grid-cols-3">
           {audiences.map(audience => (
             <Card
               key={audience.title}
-              className="rounded-xl text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="transform-style-3d rounded-xl text-center shadow-md transition-all duration-300 hover:shadow-lg hover:[transform:rotateX(10deg)_rotateY(5deg)]"
             >
               <CardHeader className="items-center">
                 <div className="w-fit rounded-full bg-accent/10 p-4">
@@ -467,5 +467,3 @@ export default function CarevoLandingPage() {
     </div>
   );
 }
-
-    

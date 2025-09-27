@@ -156,7 +156,21 @@ export default {
         bounce: 'bounce 1s infinite',
         ripple: 'ripple 600ms linear',
       },
+      utilities: {
+        '.transform-style-3d': {
+          'transform-style': 'preserve-3d',
+        },
+      },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({addUtilities}: {addUtilities: any}) {
+      addUtilities({
+        '.transform-style-3d': {
+          'transform-style': 'preserve-3d',
+        },
+      });
+    },
+  ],
 } satisfies Config;
