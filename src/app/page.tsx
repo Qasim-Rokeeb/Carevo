@@ -23,6 +23,7 @@ import {useToast} from '@/hooks/use-toast';
 import {useIsMobile} from '@/hooks/use-mobile';
 import {useIsClient} from '@/hooks/use-is-client';
 import {SwooshDivider} from '@/components/swoosh-divider';
+import {BackToTopButton} from '@/components/back-to-top-button';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -462,6 +463,9 @@ export default function CarevoLandingPage() {
         <FinalCTASection />
       </main>
       <Footer />
+      <BackToTopButton />
     </div>
   );
 }
+
+    
