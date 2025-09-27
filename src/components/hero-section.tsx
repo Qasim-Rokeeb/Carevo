@@ -119,7 +119,7 @@ export const HeroSection = () => (
     </div>
     <div className="flex justify-center items-center">
       <HeroIllustration
-        className="w-full max-w-md lg:max-w-lg h-auto"
+        className="w-full max-w-md lg:max-w-lg h-auto brightness-75"
         data-ai-hint="phone whatsapp voice"
       />
     </div>
