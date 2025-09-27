@@ -5,6 +5,7 @@ import {ThemeProvider} from '@/components/theme-provider';
 import {CookieConsentBanner} from '@/components/cookie-consent-banner';
 import {SkipToContent} from '@/components/skip-to-content';
 import {ReducedDataProvider} from '@/contexts/reduced-data-provider';
+import {ConfettiProvider} from '@/components/confetti';
 
 export const metadata: Metadata = {
   title: 'Carevo',
@@ -44,10 +45,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ReducedDataProvider>
-            <SkipToContent />
-            {children}
-            <Toaster />
-            <CookieConsentBanner />
+            <ConfettiProvider>
+              <SkipToContent />
+              {children}
+              <Toaster />
+              <CookieConsentBanner />
+            </ConfettiProvider>
           </ReducedDataProvider>
         </ThemeProvider>
       </body>

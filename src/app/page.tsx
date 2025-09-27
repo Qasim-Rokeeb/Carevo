@@ -24,6 +24,7 @@ import {useIsClient} from '@/hooks/use-is-client';
 import {SwooshDivider} from '@/components/swoosh-divider';
 import {BackToTopButton} from '@/components/back-to-top-button';
 import {ImageWithLoader} from '@/components/image-with-loader';
+import {useConfetti} from '@/components/confetti';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -317,8 +318,10 @@ const FinalCTASection = () => {
   const isMobile = useIsMobile();
   const isClient = useIsClient();
   const {toast} = useToast();
+  const {fire} = useConfetti();
 
   const handleShare = async () => {
+    fire();
     if (isClient && navigator.share && isMobile) {
       try {
         await navigator.share({

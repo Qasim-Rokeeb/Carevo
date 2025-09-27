@@ -9,6 +9,7 @@ import {ModeToggle} from '@/components/mode-toggle';
 import {LanguageSwitcher} from '@/components/language-switcher';
 import {WhatsAppIcon} from '@/components/ui/whatsapp-icon';
 import {ReducedDataToggle} from './reduced-data-toggle';
+import {useConfetti} from '@/components/confetti';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -35,6 +36,7 @@ const Logo = (props: SVGProps<SVGSVGElement>) => (
 export const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const {fire} = useConfetti();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +69,12 @@ export const Header = () => {
           <span className="text-2xl font-bold text-primary">Carevo</span>
         </Link>
         <div className="flex items-center gap-2">
-          <Button asChild>
+          <Button
+            asChild
+            onClick={() => {
+              fire();
+            }}
+          >
             <a
               href={WHATSAPP_LINK}
               target="_blank"

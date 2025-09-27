@@ -2,6 +2,7 @@ import {Button} from '@/components/ui/button';
 import type {SVGProps} from 'react';
 import {ScrollDownArrow} from './scroll-down-arrow';
 import {WhatsAppIcon} from '@/components/ui/whatsapp-icon';
+import {useConfetti} from '@/components/confetti';
 
 const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -82,47 +83,56 @@ const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
-export const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-8 md:px-24 snap-start">
-    <div className="absolute inset-0 -z-10 h-full w-full bg-gradient-to-b from-primary/10 to-transparent" />
-    <div className="flex flex-col gap-6 text-center">
-      <h1 className="text-fluid-h1 font-bold tracking-tight animate-fade-up">
-        <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          Health Guidance You Can Hear, Anytime.
-        </span>
-      </h1>
-      <p className="text-fluid-p text-muted-foreground max-w-2xl mx-auto">
-        Carevo delivers life-saving health education through WhatsApp voice
-        notes in your local&nbsp;language.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button asChild size="lg">
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Start a conversation with Carevo on WhatsApp"
+export const HeroSection = () => {
+  const {fire} = useConfetti();
+  return (
+    <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-8 md:px-24 snap-start">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-gradient-to-b from-primary/10 to-transparent" />
+      <div className="flex flex-col gap-6 text-center">
+        <h1 className="text-fluid-h1 font-bold tracking-tight animate-fade-up">
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Health Guidance You Can Hear, Anytime.
+          </span>
+        </h1>
+        <p className="text-fluid-p text-muted-foreground max-w-2xl mx-auto">
+          Carevo delivers life-saving health education through WhatsApp voice
+          notes in your local&nbsp;language.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            asChild
+            size="lg"
+            onClick={() => {
+              fire();
+            }}
           >
-            <WhatsAppIcon className="h-5 w-5 !animate-float" />
-            Start on WhatsApp
-          </a>
-        </Button>
-        <Button
-          asChild
-          size="lg"
-          variant="outline"
-          className="border-primary/50 text-primary hover:bg-primary/5 hover:text-primary"
-        >
-          <a href="#how-it-works">How It Works</a>
-        </Button>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Start a conversation with Carevo on WhatsApp"
+            >
+              <WhatsAppIcon className="h-5 w-5 !animate-float" />
+              Start on WhatsApp
+            </a>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-primary/50 text-primary hover:bg-primary/5 hover:text-primary"
+          >
+            <a href="#how-it-works">How It Works</a>
+          </Button>
+        </div>
       </div>
-    </div>
-    <div className="flex justify-center items-center">
-      <HeroIllustration
-        className="w-full max-w-md lg:max-w-lg h-auto brightness-75"
-        data-ai-hint="phone whatsapp voice"
-      />
-    </div>
-    <ScrollDownArrow className="absolute bottom-10 left-1/2 -translate-x-1/2" />
-  </section>
-);
+      <div className="flex justify-center items-center">
+        <HeroIllustration
+          className="w-full max-w-md lg:max-w-lg h-auto brightness-75"
+          data-ai-hint="phone whatsapp voice"
+        />
+      </div>
+      <ScrollDownArrow className="absolute bottom-10 left-1/2 -translate-x-1/2" />
+    </section>
+  );
+};
