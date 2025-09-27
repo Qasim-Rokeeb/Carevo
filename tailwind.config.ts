@@ -122,6 +122,34 @@ export default {
           '80%': {transform: 'scale(1.05)', opacity: '1'},
           '100%': {transform: 'scale(1)', opacity: '1'},
         },
+        'whatsapp-draw': {
+          '0%': {strokeDashoffset: '1000'},
+          '50%': {strokeDashoffset: '0'},
+          '100%': {
+            strokeDashoffset: '0',
+            fill: 'url(#wa-grad)',
+            strokeWidth: '0',
+          },
+        },
+        'whatsapp-bubble-draw': {
+          '0%': {strokeDasharray: '1000', strokeDashoffset: '1000'},
+          '50%': {strokeDasharray: '1000', strokeDashoffset: '0'},
+          '100%': {
+            strokeDashoffset: '0',
+            fill: 'url(#wa-grad)',
+            strokeWidth: '1.5',
+          },
+        },
+        'whatsapp-phone-draw': {
+          '0%': {strokeDasharray: '1000', strokeDashoffset: '1000'},
+          '40%': {strokeDasharray: '1000', strokeDashoffset: '1000'},
+          '80%': {strokeDasharray: '1000', strokeDashoffset: '0'},
+          '100%': {
+            strokeDashoffset: '0',
+            fill: '#FFF',
+            strokeWidth: '1.5',
+          },
+        },
         blink: {
           '0%, 100%': {opacity: '1'},
           '50%': {opacity: '0'},
@@ -152,6 +180,10 @@ export default {
         float: 'float 3s ease-in-out infinite',
         'pop-in':
           'pop-in .6s ease-out forwards, float 3s ease-in-out 1s infinite',
+        'whatsapp-bubble-draw':
+          'whatsapp-bubble-draw 1.2s ease-out forwards, float 3s ease-in-out 1.5s infinite',
+        'whatsapp-phone-draw':
+          'whatsapp-phone-draw 1.2s ease-out forwards, float 3s ease-in-out 1.5s infinite',
         blink: 'blink 1s step-end infinite',
         bounce: 'bounce 1s infinite',
         ripple: 'ripple 600ms linear',
