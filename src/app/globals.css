@@ -25,6 +25,10 @@
     opacity: 0.05;
     z-index: -1;
   }
+
+  button {
+    touch-action: manipulation;
+  }
 }
 
 @layer base {
