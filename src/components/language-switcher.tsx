@@ -21,14 +21,36 @@ const languages = [
 export function LanguageSwitcher() {
   const [selectedLanguage, setSelectedLanguage] = React.useState('en');
   const [announcement, setAnnouncement] = React.useState('');
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleLanguageChange = (lang: {name: string; code: string}) => {
     setSelectedLanguage(lang.code);
     setAnnouncement(`Language changed to ${lang.name}`);
   };
 
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || e.key === '/') {
+        if (
+          (e.target instanceof HTMLElement && e.target.isContentEditable) ||
+          e.target instanceof HTMLInputElement ||
+          e.target instanceof HTMLTextAreaElement ||
+          e.target instanceof HTMLSelectElement
+        ) {
+          return;
+        }
+
+        e.preventDefault();
+        setIsOpen(open => !open);
+      }
+    };
+
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
+  }, []);
+
   return (
-    <DropdownMenu>
+    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon" className="h-11 w-11">
           <Languages className="h-[1.2rem] w-[1.2rem]" />
