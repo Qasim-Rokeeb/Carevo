@@ -107,7 +107,7 @@ const WhyCarevoSection = () => {
   return (
     <section
       id="why-carevo"
-      className="container relative scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-20 md:px-24"
+      className="container relative scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-20 md:px-24 snap-start"
     >
       <SwooshDivider top className="text-background" />
       <div className="mb-12 text-center">
@@ -146,7 +146,7 @@ const WhyCarevoSection = () => {
 const AboutSection = () => (
   <section
     id="about"
-    className="container scroll-mt-24 overflow-hidden px-4 py-20 md:px-24"
+    className="container scroll-mt-24 overflow-hidden px-4 py-20 md:px-24 snap-start"
   >
     <div className="grid items-center gap-16 md:grid-cols-2">
       <div className="relative overflow-hidden rounded-lg shadow-xl">
@@ -208,7 +208,7 @@ const AboutSection = () => (
 const HowItWorksSection = () => (
   <section
     id="how-it-works"
-    className="relative scroll-mt-24 bg-background px-4 py-20 md:px-24"
+    className="relative scroll-mt-24 bg-background px-4 py-20 md:px-24 snap-start"
   >
     <div className="container">
       <div className="mb-16 text-center">
@@ -277,7 +277,7 @@ const WhoItsForSection = () => {
   return (
     <section
       id="who-its-for"
-      className="relative scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-24 md:px-24"
+      className="relative scroll-mt-24 rounded-2xl bg-secondary/50 px-4 py-24 md:px-24 snap-start"
     >
       <SwooshDivider top className="text-background" />
       <div className="container">
@@ -343,7 +343,7 @@ const FinalCTASection = () => {
   return (
     <section
       id="cta"
-      className="scroll-mt-24 bg-background px-4 py-24 md:px-24"
+      className="scroll-mt-24 bg-background px-4 py-24 md:px-24 snap-start"
     >
       <div className="container relative overflow-hidden rounded-2xl bg-primary/90 p-16 text-center text-primary-foreground">
         <div className="animate-pulse-slow absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-background/10"></div>
@@ -398,7 +398,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative animate-fade-in duration-500 overflow-hidden border-t bg-secondary/50">
+    <footer className="relative animate-fade-in duration-500 overflow-hidden border-t bg-secondary/50 snap-start">
       <div className="absolute inset-0 z-0 opacity-[0.03]">
         <svg
           width="100%"

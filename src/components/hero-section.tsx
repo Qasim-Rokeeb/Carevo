@@ -83,7 +83,7 @@ const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
 export const HeroSection = () => (
-  <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-8 md:px-24">
+  <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-8 md:px-24 snap-start">
     <div className="absolute inset-0 -z-10 h-full w-full bg-gradient-to-b from-primary/10 to-transparent" />
     <div className="flex flex-col gap-6 text-center">
       <h1 className="text-fluid-h1 font-bold tracking-tight animate-fade-up">
