@@ -20,6 +20,12 @@ const languages = [
 
 export function LanguageSwitcher() {
   const [selectedLanguage, setSelectedLanguage] = React.useState('en');
+  const [announcement, setAnnouncement] = React.useState('');
+
+  const handleLanguageChange = (lang: {name: string; code: string}) => {
+    setSelectedLanguage(lang.code);
+    setAnnouncement(`Language changed to ${lang.name}`);
+  };
 
   return (
     <DropdownMenu>
@@ -33,7 +39,7 @@ export function LanguageSwitcher() {
         {languages.map(lang => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setSelectedLanguage(lang.code)}
+            onClick={() => handleLanguageChange(lang)}
             className={cn(
               lang.code === selectedLanguage &&
                 'bg-accent/10 font-semibold shadow-[0_0_8px_hsl(var(--accent))]'
@@ -49,6 +55,9 @@ export function LanguageSwitcher() {
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
+      <span className="sr-only" aria-live="polite">
+        {announcement}
+      </span>
     </DropdownMenu>
   );
 }
