@@ -10,6 +10,13 @@ import {LanguageSwitcher} from '@/components/language-switcher';
 import {WhatsAppIcon} from '@/components/ui/whatsapp-icon';
 import {ReducedDataToggle} from './reduced-data-toggle';
 import {useConfetti} from '@/components/confetti';
+import {Menu, X} from 'lucide-react';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -36,6 +43,7 @@ const Logo = (props: SVGProps<SVGSVGElement>) => (
 export const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {fire} = useConfetti();
 
   useEffect(() => {
@@ -68,7 +76,7 @@ export const Header = () => {
           <Logo className="h-8 w-8" />
           <span className="text-2xl font-bold text-primary">Carevo</span>
         </Link>
-        <div className="flex items-center gap-2">
+        <nav className="hidden items-center gap-2 md:flex">
           <Button
             asChild
             onClick={() => {
@@ -88,6 +96,59 @@ export const Header = () => {
           <LanguageSwitcher />
           <ReducedDataToggle />
           <ModeToggle />
+        </nav>
+        <div className="md:hidden">
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label="Open mobile menu"
+              >
+                {isMenuOpen ? <X /> : <Menu />}
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" id="mobile-menu">
+              <SheetHeader>
+                <Link
+                  href="/"
+                  className="flex items-center gap-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Logo className="h-8 w-8" />
+                  <span className="text-2xl font-bold text-primary">
+                    Carevo
+                  </span>
+                </Link>
+              </SheetHeader>
+              <div className="mt-8 flex flex-col items-center gap-4">
+                <Button
+                  asChild
+                  onClick={() => {
+                    fire();
+                    setIsMenuOpen(false);
+                  }}
+                  className="w-full"
+                >
+                  <a
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <WhatsAppIcon className="h-5 w-5" />
+                    Start on WhatsApp
+                  </a>
+                </Button>
+                <div className="flex w-full justify-around pt-4">
+                  <LanguageSwitcher />
+                  <ReducedDataToggle />
+                  <ModeToggle />
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
