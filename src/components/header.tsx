@@ -17,6 +17,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import {AnimatedHamburgerIcon} from './animated-hamburger-icon';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -107,7 +108,7 @@ export const Header = () => {
                 aria-controls="mobile-menu"
                 aria-label="Open mobile menu"
               >
-                {isMenuOpen ? <X /> : <Menu />}
+                <AnimatedHamburgerIcon isOpen={isMenuOpen} />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" id="mobile-menu">
