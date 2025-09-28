@@ -9,6 +9,7 @@ import {ConfettiProvider} from '@/components/confetti';
 import {OfflineNotifier} from '@/components/offline-notifier';
 import {DynamicBackground} from '@/components/dynamic-background';
 import {Spotlight} from '@/components/spotlight-cursor';
+import {KonamiCodeEasterEgg} from '@/components/konami-code-easter-egg';
 
 export const metadata: Metadata = {
   title: 'Carevo',
@@ -56,6 +57,7 @@ export default function RootLayout({
               <Toaster />
               <CookieConsentBanner />
               <OfflineNotifier />
+              <KonamiCodeEasterEgg />
             </ConfettiProvider>
           </ReducedDataProvider>
         </ThemeProvider>
