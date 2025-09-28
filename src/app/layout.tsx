@@ -8,6 +8,7 @@ import {ReducedDataProvider} from '@/contexts/reduced-data-provider';
 import {ConfettiProvider} from '@/components/confetti';
 import {OfflineNotifier} from '@/components/offline-notifier';
 import {DynamicBackground} from '@/components/dynamic-background';
+import {Spotlight} from '@/components/spotlight-cursor';
 
 export const metadata: Metadata = {
   title: 'Carevo',
@@ -49,6 +50,7 @@ export default function RootLayout({
           <ReducedDataProvider>
             <ConfettiProvider>
               <DynamicBackground />
+              <Spotlight />
               <SkipToContent />
               {children}
               <Toaster />
