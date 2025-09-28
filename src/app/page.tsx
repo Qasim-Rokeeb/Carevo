@@ -32,6 +32,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import {WhatsAppFloatButton} from '@/components/whatsapp-float-button';
+import {CharacterFadeUp} from '@/components/character-fade-up';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -121,7 +122,10 @@ const WhyCarevoSection = () => {
       <div className="mb-12 text-center">
         <h2 className="text-fluid-h2 font-bold text-foreground">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Closing the Health Information Gap
+            <CharacterFadeUp
+              text="Closing the Health Information Gap"
+              className="inline-block"
+            />
           </span>
         </h2>
       </div>
@@ -221,7 +225,10 @@ const HowItWorksSection = () => (
       <div className="mb-16 text-center">
         <h2 className="text-fluid-h2 font-bold text-foreground">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Get Started in Seconds
+            <CharacterFadeUp
+              text="Get Started in Seconds"
+              className="inline-block"
+            />
           </span>
         </h2>
       </div>
@@ -291,7 +298,10 @@ const WhoItsForSection = () => {
         <div className="mb-12 text-center">
           <h2 className="text-fluid-h2 font-bold text-foreground">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Designed For Everyone
+              <CharacterFadeUp
+                text="Designed For Everyone"
+                className="inline-block"
+              />
             </span>
           </h2>
         </div>
@@ -358,7 +368,10 @@ const FinalCTASection = () => {
         <div className="animate-pulse-slow absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-background/10"></div>
         <div className="animation-delay-3000 animate-pulse-slow absolute -right-10 -top-10 h-48 w-48 rounded-full bg-background/10"></div>
         <h2 className="text-fluid-h2 font-bold">
-          Start Learning With Just a Voice Note.
+          <CharacterFadeUp
+            text="Start Learning With Just a Voice Note."
+            className="inline-block"
+          />
         </h2>
         <div className="mt-8">
           <Button
