@@ -197,10 +197,16 @@ export default {
   },
   plugins: [
     require('tailwindcss-animate'),
-    function ({addUtilities}: {addUtilities: any}) {
+    function ({addUtilities, theme}: {addUtilities: any; theme: any}) {
       addUtilities({
         '.transform-style-3d': {
           'transform-style': 'preserve-3d',
+        },
+        '.rotate-y-180': {
+          transform: 'rotateY(180deg)',
+        },
+        '.backface-hidden': {
+          'backface-visibility': 'hidden',
         },
       });
     },
