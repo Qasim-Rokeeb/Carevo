@@ -436,21 +436,19 @@ const Footer = () => {
       <div className="container relative z-10 flex flex-col gap-4 px-4 py-8 text-center text-muted-foreground md:px-24">
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
-              <div
-                className="animate-fade-up group flex cursor-pointer items-center justify-center gap-2"
-                onClick={handleCopy}
-                onKeyDown={e => e.key === 'Enter' && handleCopy()}
-                role="button"
-                tabIndex={0}
-                aria-label="Copy phone number"
-                style={{animationFillMode: 'forwards', opacity: 0}}
-              >
-                <Phone className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
-                <span className="transition-colors group-hover:text-primary">
-                  {phoneNumber}
-                </span>
-              </div>
+            <TooltipTrigger
+              className="animate-fade-up group flex cursor-pointer items-center justify-center gap-2"
+              onClick={handleCopy}
+              onKeyDown={e => e.key === 'Enter' && handleCopy()}
+              role="button"
+              tabIndex={0}
+              aria-label="Copy phone number"
+              style={{animationFillMode: 'forwards', opacity: 0}}
+            >
+              <Phone className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+              <span className="transition-colors group-hover:text-primary">
+                {phoneNumber}
+              </span>
             </TooltipTrigger>
             <TooltipContent>
               <p>Click to copy phone number</p>
