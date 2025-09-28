@@ -4,7 +4,7 @@ import * as React from 'react';
 import {Slot} from '@radix-ui/react-slot';
 import {cva, type VariantProps} from 'class-variance-authority';
 
-import {cn}from '@/lib/utils';
+import {cn} from '@/lib/utils';
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 relative overflow-hidden backdrop-blur-sm border',
@@ -46,31 +46,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({className, variant, size, asChild = false, ...props}, ref) => {
     const Comp = asChild ? Slot : 'button';
 
-    const createRipple = (event: React.MouseEvent<HTMLButtonElement>) => {
-      const button = event.currentTarget;
-      const circle = document.createElement('span');
-      const diameter = Math.max(button.clientWidth, button.clientHeight);
-      const radius = diameter / 2;
-
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-      circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-      circle.classList.add('ripple');
-
-      const ripple = button.getElementsByClassName('ripple')[0];
-
-      if (ripple) {
-        ripple.remove();
-      }
-
-      button.appendChild(circle);
-    };
-
     return (
       <Comp
         className={cn(buttonVariants({variant, size, className}))}
         ref={ref}
-        onMouseDown={createRipple}
         {...props}
       />
     );

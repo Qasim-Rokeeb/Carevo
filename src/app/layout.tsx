@@ -10,6 +10,7 @@ import {OfflineNotifier} from '@/components/offline-notifier';
 import {DynamicBackground} from '@/components/dynamic-background';
 import {Spotlight} from '@/components/spotlight-cursor';
 import {KonamiCodeEasterEgg} from '@/components/konami-code-easter-egg';
+import {RippleEffect} from '@/components/ripple-effect';
 
 export const metadata: Metadata = {
   title: 'Carevo',
@@ -58,6 +59,7 @@ export default function RootLayout({
               <CookieConsentBanner />
               <OfflineNotifier />
               <KonamiCodeEasterEgg />
+              <RippleEffect />
             </ConfettiProvider>
           </ReducedDataProvider>
         </ThemeProvider>
