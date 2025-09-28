@@ -31,6 +31,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import {WhatsAppFloatButton} from '@/components/whatsapp-float-button';
 
 const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
@@ -558,6 +559,7 @@ export default function CarevoLandingPage() {
       </main>
       <Footer />
       <BackToTopButton />
+      <WhatsAppFloatButton />
     </div>
   );
 }
