@@ -3,6 +3,7 @@ import type {SVGProps} from 'react';
 import {ScrollDownArrow} from './scroll-down-arrow';
 import {WhatsAppIcon} from '@/components/ui/whatsapp-icon';
 import {useConfetti} from '@/components/confetti';
+import {useRef, useState} from 'react';
 
 const HeroIllustration = (props: SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -85,6 +86,24 @@ const WHATSAPP_LINK = 'https://wa.me/15551234567?text=Hi%20Carevo!';
 
 export const HeroSection = () => {
   const {fire} = useConfetti();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [transform, setTransform] = useState('rotateX(0deg) rotateY(0deg)');
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const {width, height, left, top} =
+      containerRef.current.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+    const rotateX = ((y / height - 0.5) * -1 * 20).toFixed(2);
+    const rotateY = ((x / width - 0.5) * 20).toFixed(2);
+    setTransform(`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
+  };
+
+  const handleMouseLeave = () => {
+    setTransform('rotateX(0deg) rotateY(0deg)');
+  };
+
   return (
     <section className="container grid lg:grid-cols-2 gap-10 items-center py-24 md:py-32 relative px-8 md:px-24 snap-start">
       <div className="absolute inset-0 -z-10 h-full w-full bg-gradient-to-b from-primary/10 to-transparent" />
@@ -126,9 +145,16 @@ export const HeroSection = () => {
           </Button>
         </div>
       </div>
-      <div className="flex justify-center items-center">
+      <div
+        ref={containerRef}
+        className="flex justify-center items-center transform-style-3d"
+        style={{perspective: '1000px'}}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <HeroIllustration
-          className="w-full max-w-md lg:max-w-lg h-auto brightness-75"
+          className="w-full max-w-md lg:max-w-lg h-auto brightness-75 transition-transform duration-300 ease-out"
+          style={{transform}}
           data-ai-hint="phone whatsapp voice"
         />
       </div>

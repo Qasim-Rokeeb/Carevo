@@ -125,7 +125,7 @@ const WhyCarevoSection = () => {
           </span>
         </h2>
       </div>
-      <div className="grid gap-8 [perspective:1000px] md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-3" style={{perspective: '1000px'}}>
         {items.map(item => (
           <Card
             key={item.title}
@@ -295,7 +295,7 @@ const WhoItsForSection = () => {
             </span>
           </h2>
         </div>
-        <div className="grid gap-8 [perspective:1000px] md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3" style={{perspective: '1000px'}}>
           {audiences.map(audience => (
             <Card
               key={audience.title}
